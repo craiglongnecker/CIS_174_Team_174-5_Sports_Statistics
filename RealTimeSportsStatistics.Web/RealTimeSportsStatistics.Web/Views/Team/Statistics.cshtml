@@ -1,7 +1,50 @@
-﻿
-@{
-    ViewBag.Title = "Statistics";
-}
+﻿@model RealTimeSportsStatistics.Web.Models.TeamDisplayModel
+<html>
+<head>
 
-<h2>Statistics</h2>
+</head>
+<body>
+	<br />
+	<h1>View All Employees</h1>
 
+	<div class="table-responsive">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Team ID</th>
+					<th>Team City</th>
+					<th>Team Name</th>
+					<th>Wins</th>
+					<th>Losses</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!--@foreach (var team in Model.Teams)
+				{
+					<tr>
+						<td>
+							@team.TeamID
+						</td>
+						<td>
+							@team.TeamCity
+						</td>
+						<td>
+							@team.TeamName
+						</td>
+						<td>
+							@team.Wins
+						</td>
+						<td>
+							@team.Losses
+						</td>
+					</tr>
+				} -->
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
+
+<link href="~/Content/bootstrap.min.css" />
+<link href="~/Scripts/jquery-3.0.0.min.js" />
+<link href="~/Scripts/bootstrap.min.js" />
