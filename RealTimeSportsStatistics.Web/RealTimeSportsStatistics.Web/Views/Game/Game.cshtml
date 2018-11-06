@@ -1,0 +1,185 @@
+﻿
+@{
+	ViewBag.Title = "Game";
+}
+<head>
+	<link href="~/Content/bootstrap.css" type="text/css" />
+	<style type="text/css">
+		#container {
+			height: auto;
+			width: auto;
+		}
+
+		.quarterScores {
+			border: 1px solid black;
+			width: auto;
+			height: auto;
+		}
+
+		.scoreArea {
+			margin-top: 10px;
+			padding: 20px;
+			width: 100%;
+			height: auto;
+			border: 1px solid black;
+		}
+
+		.team1Area {
+			margin-top: 10px;
+			width: 50%;
+			height: auto;
+			border: 1px solid black;
+			float: left;
+			padding: 1%;
+		}
+
+		.team2Area {
+			margin-top: 10px;
+			width: 50%;
+			height: auto;
+			border: 1px solid black;
+			float: right;
+			padding: 1%;
+		}
+
+		.team1InputArea {
+			margin-top: 10px;
+			width: 50%;
+			height: auto;
+			border: 1px solid black;
+			float: left;
+			padding: 1%;
+		}
+
+		.team2InputArea {
+			margin-top: 10px;
+			width: 50%;
+			height: auto;
+			border: 1px solid black;
+			float: right;
+			padding: 1%;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div class="scoreArea">
+			<!---------open area for scoreArea---------------------------------------------->
+			<div class="row">
+				<!--row for select teams and reset button-->
+				<div class="col" style="text-align:left;">
+					pick a team drop down
+				</div>
+				<div class="col" style="text-align:center;">
+					<button id="reset" type="reset">Reset</button>
+				</div>
+				<div class="col" style="text-align: right;">
+					pick a team drop down
+				</div>
+			</div> <!---close team select/reset row------>
+
+
+
+			<div class="row">
+				<!------row for logos, team name, and quarter score card-->
+				<div class="col-sm-3" style="align-content:center; text-align:center;">
+					<img src="~/Content/images/nfl.png" style="width:200px; height: 200px;" /> <br />
+					<label id="team1Name">Team 1 Name</label>
+				</div>
+				<div class="col-sm-6" style="align-content:center; margin: auto 0;">
+					<div class="quarterScores">
+						content for scoring by quarter
+					</div>
+				</div>
+				<div class="col-sm-3" style="align-content:center; text-align:center;">
+					<img src="~/Content/images/nfl.png" style="width:200px; height: 200px;" /> <br />
+					<label id="team2Name">Team 2 Name</label>
+				</div>
+			</div> <!------close row for logos, team names, and score card-->
+
+
+
+			<div class="row">
+				<!---open row for team score, quarter selection----->
+				<div class="col col-sm-3" style="text-align:center">
+					<label id="team1TotalScore">20</label>
+				</div>
+				<div class="col-sm-6" style="align-content:center; text-align:center;">
+					<form action="">
+						<label class="radio-inline">
+							<input type="radio" name="q1" value="q1"> Q1<br>
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="q2" value="q2"> Q2<br>
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="q3"> Q3<br>
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="q4"> Q4<br>
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="ot"> OT<br>
+						</label>
+						<label class="radio-inline">
+							<input type="radio" name="final"> Final<br>
+						</label>
+					</form>
+				</div>
+				<div class="col col-sm-3" style="text-align:center">
+					<label id="team2TotalScore">20</label>
+				</div>
+			</div><!---close row for team score, quarter selection----->
+
+		</div> <!-----close score area-------------------------------------------------------------->
+
+
+		<div class="team1Area">
+			<!----open team1 Area------------------------------------------------------------------->
+			team 1
+			<form>
+				<fieldset>
+					<legend>Statistics</legend>
+					<div class="col">
+						info
+					</div>
+					<div class="col">
+						info
+					</div>
+
+
+				</fieldset>
+			</form>
+		</div> <!-----close team 1 area------------------------------------------------------------->
+
+
+		<div class="team2Area">
+			<!---open team 2 Area------------------------------------------------------------------->
+			team2
+			<form>
+				<fieldset>
+					<legend>Statistics</legend>
+					<div class="col">
+						info
+					</div>
+					<div class="col">
+						info
+					</div>
+
+
+				</fieldset>
+			</form>
+		</div> <!-----close team 2 area-------------------------------------------------------------->
+
+		<div class="team1InputArea">
+			Input for team 1
+		</div>
+
+		<div class="team1InputArea">
+			Input for team 2
+		</div>
+	</div> <!-----close container---------->
+
+</body>
+
+

@@ -102,6 +102,40 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\atl_falcons.png" />
+    <Content Include="Content\images\az_cardinals.png" />
+    <Content Include="Content\images\balt_ravens.png" />
+    <Content Include="Content\images\buff_bills.png" />
+    <Content Include="Content\images\car_panthers.png" />
+    <Content Include="Content\images\chi_bears.png" />
+    <Content Include="Content\images\cinn_bengals.png" />
+    <Content Include="Content\images\cleve_browns.png" />
+    <Content Include="Content\images\dall_cowboys.png" />
+    <Content Include="Content\images\den_broncos.png" />
+    <Content Include="Content\images\det_lions.png" />
+    <Content Include="Content\images\gb_packers.png" />
+    <Content Include="Content\images\houston_texans.png" />
+    <Content Include="Content\images\ind_colts.png" />
+    <Content Include="Content\images\jck_jag.png" />
+    <Content Include="Content\images\kc_chiefs.png" />
+    <Content Include="Content\images\la_chargers.png" />
+    <Content Include="Content\images\la_rams.png" />
+    <Content Include="Content\images\miami_dolphins.png" />
+    <Content Include="Content\images\mn_vikings.png" />
+    <Content Include="Content\images\ne_pats.png" />
+    <Content Include="Content\images\nfl.png" />
+    <Content Include="Content\images\no_saints.png" />
+    <Content Include="Content\images\ny_giants.gif" />
+    <Content Include="Content\images\ny_jets.png" />
+    <Content Include="Content\images\oak_raiders.png" />
+    <Content Include="Content\images\phil_eagles.png" />
+    <Content Include="Content\images\pitt_steelers.png" />
+    <Content Include="Content\images\sea_seahawks.png" />
+    <Content Include="Content\images\sf_49ers.png" />
+    <Content Include="Content\images\tb_buccaneers.png" />
+    <Content Include="Content\images\tn_titans.png" />
+    <Content Include="Content\images\wash_redskins.png" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -130,6 +164,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -151,6 +186,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GameController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -163,6 +200,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Game\Game.cshtml" />
+    <Content Include="Views\Team\Statistics.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -172,7 +214,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Team\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

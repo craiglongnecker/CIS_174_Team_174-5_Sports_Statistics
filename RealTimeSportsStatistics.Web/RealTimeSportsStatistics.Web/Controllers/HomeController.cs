@@ -6,14 +6,12 @@ using System.Web.Mvc;
 
 namespace RealTimeSportsStatistics.Web.Controllers
 {
-    public class TeamController : Controller
+    public class HomeController : Controller
     {
-        // GET: Team
-        public ActionResult Statistics()
+        // GET: Home
+        public ActionResult Index()
         {
             return View();
         }
     }
-
-
 }
