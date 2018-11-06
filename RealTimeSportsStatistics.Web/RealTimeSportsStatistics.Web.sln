@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeSportsStatistics.Web", "RealTimeSportsStatistics.Web\RealTimeSportsStatistics.Web.csproj", "{CFCC83A5-7F01-4A8A-A44A-4C9CAB5D49B8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F4E30F56-A0FD-4ACE-A027-6EF078DFEC48} = {F4E30F56-A0FD-4ACE-A027-6EF078DFEC48}
+		{50D8AAAD-3CCD-4B00-BF18-A9B706A7E277} = {50D8AAAD-3CCD-4B00-BF18-A9B706A7E277}
+		{2975CFC3-6C8C-43F8-8B00-FD158B57820F} = {2975CFC3-6C8C-43F8-8B00-FD158B57820F}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeSportsStatistics.Domain", "RealTimeSportsStatistics.Domain\RealTimeSportsStatistics.Domain.csproj", "{2975CFC3-6C8C-43F8-8B00-FD158B57820F}"
 EndProject
