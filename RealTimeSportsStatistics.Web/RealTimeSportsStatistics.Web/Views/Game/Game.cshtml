@@ -59,6 +59,11 @@
 			float: right;
 			padding: 1%;
 		}
+
+		td {
+			text-align: center;
+			font-size: 8pt;
+		}
 	</style>
 </head>
 <body>
@@ -88,7 +93,40 @@
 				</div>
 				<div class="col-sm-6" style="align-content:center; margin: auto 0;">
 					<div class="quarterScores">
-						content for scoring by quarter
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Q1</th>
+									<th>Q2</th>
+									<th>Q3</th>
+									<th>Q4</th>
+									<th>OT</th>
+									<th>Final</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td style="font-size: 12pt;"><label id="team1ScoreNameLbl">team 1 name</label></td>
+									<td style="font-size: 12pt;"><label id="team1Q1Score">0</label></td>
+									<td style="font-size: 12pt;"><label id="team1Q2Score">0</label></td>
+									<td style="font-size: 12pt;"><label id="team1Q3Score">0</label></td>
+									<td style="font-size: 12pt;"><label id="team1Q4Score">0</label></td>
+									<td style="font-size: 12pt;"><label id="team1OTScore">0</label></td>
+									<td style="font-size: 12pt;"><label id="team1FinalScore">0</label></td>
+								</tr>
+								<tr>
+									<td style="font-size: 12pt;"><label id="team2ScoreNameLbl">team 2 name</label></td>
+									<td style="font-size: 12pt;"><label id="team2Q1Score">0</label></td>
+									<td style="font-size: 12pt;"><label id="team2Q2Score">0</label></td>
+									<td style="font-size: 12pt;"><label id="team2Q3Score">0</label></td>
+									<td style="font-size: 12pt;"><label id="team2Q4Score">0</label></td>
+									<td style="font-size: 12pt;"><label id="team2OTScore">0</label></td>
+									<td style="font-size: 12pt;"><label id="team2FinalScore">0</label></td>
+								</tr>
+							</tbody>
+						</table>
+
 					</div>
 				</div>
 				<div class="col-sm-3" style="align-content:center; text-align:center;">
@@ -102,32 +140,32 @@
 			<div class="row">
 				<!---open row for team score, quarter selection----->
 				<div class="col col-sm-3" style="text-align:center">
-					<label id="team1TotalScore">20</label>
+					<label id="team1CurrentScore">0</label>
 				</div>
 				<div class="col-sm-6" style="align-content:center; text-align:center;">
 					<form action="">
 						<label class="radio-inline">
-							<input type="radio" name="q1" value="q1"> Q1<br>
+							<input type="radio" name="q1RButton" value="q1"> Q1<br>
 						</label>
 						<label class="radio-inline">
-							<input type="radio" name="q2" value="q2"> Q2<br>
+							<input type="radio" name="q2RButton" value="q2"> Q2<br>
 						</label>
 						<label class="radio-inline">
-							<input type="radio" name="q3"> Q3<br>
+							<input type="radio" name="q3RButton"> Q3<br>
 						</label>
 						<label class="radio-inline">
-							<input type="radio" name="q4"> Q4<br>
+							<input type="radio" name="q4RButton"> Q4<br>
 						</label>
 						<label class="radio-inline">
-							<input type="radio" name="ot"> OT<br>
+							<input type="radio" name="otRButton"> OT<br>
 						</label>
 						<label class="radio-inline">
-							<input type="radio" name="final"> Final<br>
+							<input type="radio" name="finalRButton"> Final<br>
 						</label>
 					</form>
 				</div>
 				<div class="col col-sm-3" style="text-align:center">
-					<label id="team2TotalScore">20</label>
+					<label id="team2CurrentScore">0</label>
 				</div>
 			</div><!---close row for team score, quarter selection----->
 
@@ -141,11 +179,42 @@
 				<fieldset>
 					<legend>Statistics</legend>
 					<div class="col">
-						info
+						<table class="table table-bordered">
+							<tbody>
+								<tr>
+									<td>Touchdowns: <label id="team1TocuhdownLbl">0</label></td>
+									<td>Field Goals: <label id="team1FieldGoalLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Passing Yards: <label id="team1PassYardsLbl">0</label></td>
+									<td>First Downs: <label id="team1FirstDownLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Completed Passes: <label id="team1PassComLbl">0</label></td>
+									<td>Intercepted Passes: <label id="team1PassIntLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Sacks: <label id="team1SackLbl">0</label></td>
+									<td>Yards Lost: <label id="team1YardLostLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Punts: <label id="team1PuntLabel">0</label></td>
+									<td>Fumbles: <label id="team1FumbleLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Rushes: <label id="team1RushLabel">0</label></td>
+									<td>Rushing Yards: <label id="team1RushYardsLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Penalties: <label id="team1PenLbl">0</label></td>
+									<td>Penalty Yards: <label id="team1PenYardsLbl">0</label></td>
+								</tr>
+								<tr></tr>
+							</tbody>
+						</table>
+							
 					</div>
-					<div class="col">
-						info
-					</div>
+
 
 
 				</fieldset>
@@ -160,11 +229,41 @@
 				<fieldset>
 					<legend>Statistics</legend>
 					<div class="col">
-						info
+						<table class="table table-bordered">
+							<tbody>
+								<tr>
+									<td>Touchdowns: <label id="team2TocuhdownLbl">0</label></td>
+									<td>Field Goals: <label id="team2FieldGoalLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Passing Yards: <label id="team2PassYardsLbl">0</label></td>
+									<td>First Downs: <label id="team2FirstDownLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Completed Passes: <label id="team2PassComLbl">0</label></td>
+									<td>Intercepted Passes: <label id="team2PassIntLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Sacks: <label id="team2SackLbl">0</label></td>
+									<td>Yards Lost: <label id="team2YardLostLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Punts: <label id="team2PuntLabel">0</label></td>
+									<td>Fumbles: <label id="team2FumbleLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Rushes: <label id="team2RushLabel">0</label></td>
+									<td>Rushing Yards: <label id="team2RushYardsLbl">0</label></td>
+								</tr>
+								<tr>
+									<td>Penalties: <label id="team2PenLbl">0</label></td>
+									<td>Penalty Yards: <label id="team2PenYardsLbl">0</label></td>
+								</tr>
+								<tr></tr>
+							</tbody>
+						</table>
 					</div>
-					<div class="col">
-						info
-					</div>
+
 
 
 				</fieldset>
@@ -172,11 +271,73 @@
 		</div> <!-----close team 2 area-------------------------------------------------------------->
 
 		<div class="team1InputArea">
-			Input for team 1
+			<fieldset>
+				<legend>Input</legend>
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<td><button id="team1Touchdown">Touchdown</button></td> <!--adds points to total score, counter label+= 6-->
+							<td><button id="team1ExtraPoint">Extra Point</button></td> <!--adds one point to score-->
+							<td><button id="team1FieldGoal">Field Goal</button></td> <!--adds 3 pts to score, field goal count++-->
+							<td><button id="team1FirstDown">First Down</button></td> <!-- first down count++-->
+						</tr>
+						<tr>
+							<td><button id="team1PassCom">Pass Completed</button></td> <!--pass completed lbl ++-->
+							<td><button id="team1PassInt">Pass Intercepted</button></td> <!-- pass intercepted lbl++-->
+							<td>Passing Yards: <input size="2" id="team1PassYardsInput"></td>	<!--add input to total passing yard stat-->
+							<td><button id="team1Fumble">Fumble</button></td> <!--fumble lbl++-->
+						</tr>
+						<tr>
+							<td><button id="team1Punt">Punt</button></td><!--counter for punts++-->
+							<td>Punt Yards: <input size="2" type="text" name="team1PuntYardInput"></td> <!--add input value to current punt yards total-->
+							<td><button id="team1Penalty">Penalty</button></td> <!--penalty count++-->
+							<td>Penalty Yards: <input size="2" ; type="text" name="team1PenaltyYardsInput"></td> <!--add value to current penalty yards total-->
+						</tr>
+						<tr>
+							<td><button id="team1sack">Sack</button></td> <!--team 1 sack counter++-->
+							<td>Yards Lost: <input size="2" type="text" name="team1YardsLostInput"></td> <!--add input value to current yards lost yards total-->
+							<td><button id="team1RushAtt">Rush Att</button></td> <!--penalty count++-->
+							<td>Rush Yards: <input size="2" ; type="text" name="team1RushYardsInput"></td> <!--add value to current rush yards total-->
+						</tr>
+					</tbody>
+				</table>
+				<input type="submit" value="Submit">
+				</fieldset>
 		</div>
 
 		<div class="team1InputArea">
-			Input for team 2
+			<fieldset>
+				<legend>Input</legend>
+				<table class="table table-bordered">
+					<tbody>
+						<tr>
+							<td><button id="team2Touchdown">Touchdown</button></td> <!--adds points to total score, counter label+= 6-->
+							<td><button id="team2ExtraPoint">Extra Point</button></td> <!--adds one point to score-->
+							<td><button id="team2FieldGoal">Field Goal</button></td> <!--adds 3 pts to score, field goal count++-->
+							<td><button id="team2FirstDown">First Down</button></td> <!-- first down count++-->
+						</tr>
+						<tr>
+							<td><button id="team2PassCom">Pass Completed</button></td> <!--pass completed lbl ++-->
+							<td><button id="team2PassInt">Pass Intercepted</button></td> <!-- pass intercepted lbl++-->
+							<td>Passing Yards: <input size="2" id="team2PassYardsInput"></td>	<!--add input to total passing yard stat-->
+							<td><button id="team2Fumble">Fumble</button></td> <!--fumble lbl++-->
+						</tr>
+						<tr>
+							<td><button id="team2Punt">Punt</button></td><!--counter for punts++-->
+							<td>Punt Yards: <input size="2" type="text" name="team2PuntYardInput"></td> <!--add input value to current punt yards total-->
+							<td><button id="team2Penalty">Penalty</button></td> <!--penalty count++-->
+							<td>Penalty Yards: <input size="2" ; type="text" name="team2PenaltyYardsInput"></td> <!--add value to current penalty yards total-->
+						</tr>
+						<tr>
+							<td><button id="team2sack">Sack</button></td> <!--team 1 sack counter++-->
+							<td>Yards Lost: <input size="2" type="text" name="team2YardsLostInput"></td> <!--add input value to current yards lost yards total-->
+							<td><button id="team2RushAtt">Rush Att</button></td> <!--penalty count++-->
+							<td>Rush Yards: <input size="2" ; type="text" name="team2RushYardsInput"></td> <!--add value to current rush yards total-->
+						</tr>
+					</tbody>
+				</table>
+				<input type="submit" value="Submit">
+			</fieldset>
 		</div>
 	</div> <!-----close container---------->
 
