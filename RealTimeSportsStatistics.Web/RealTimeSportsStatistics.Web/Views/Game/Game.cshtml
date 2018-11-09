@@ -73,13 +73,83 @@
 			<div class="row">
 				<!--row for select teams and reset button-->
 				<div class="col" style="text-align:left;">
-					pick a team drop down
+					<form action="./" method="GET">
+						<select name="team1Select">
+							<option value="default">Pick A Team</option>
+							<option value="atl">Atlanta Falcons</option>
+							<option value="az">Arizona Cardinals</option>
+							<option value="blt">Baltimore Ravens</option>
+							<option value="car">Carolina Panthers</option>
+							<option value="chi">Chicago Bears</option>
+							<option value="cin">Cinncinati Bengals</option>
+							<option value="cle">Cleveland Browns</option>
+							<option value="dal">Dallas Cowboys</option>
+							<option value="den">Denver Broncos</option>
+							<option value="det">Datroit Lions</option>
+							<option value="gb">Green Bay Packers</option>
+							<option value="hou">Houston Texans</option>
+							<option value="ind">Indianapolis Colts</option>
+							<option value="jck">Jacksonville Jaguars</option>
+							<option value="kc">Kansas City Chiefs</option>
+							<option value="lac">Los Angeles Chargers</option>
+							<option value="lar">Los Angeles Rams</option>
+							<option value="mai">Miami Dolphins</option>
+							<option value="mn">Minnesota Vikings</option>
+							<option value="ne">New England Patriots</option>
+							<option value="no">New Orleans Saints</option>
+							<option value="nyg">New York Giants</option>
+							<option value="nyj">New York Jets</option>
+							<option value="oak">Oakland Raiders</option>
+							<option value="phi">Philadelphia Eagles</option>
+							<option value="pit">Pittsburgh Steelers</option>
+							<option value="sea">Seattle Seahawks</option>
+							<option value="sf">San Francisco 49ers</option>
+							<option value="tb">Tampa Bay Buccaneers</option>
+							<option value="tn">Tenessee Titans</option>
+							<option value="wsh">Washington Redskins</option>
+						</select>
+					</form>
 				</div>
 				<div class="col" style="text-align:center;">
 					<button id="reset" type="reset">Reset</button>
 				</div>
 				<div class="col" style="text-align: right;">
-					pick a team drop down
+					<form action="./" method="GET">
+						<select name="team1Select" >
+							<option value="default">Pick A Team</option>
+							<option value="atl">Atlanta Falcons</option>
+							<option value="az">Arizona Cardinals</option>
+							<option value="blt">Baltimore Ravens</option>
+							<option value="car">Carolina Panthers</option>
+							<option value="chi">Chicago Bears</option>
+							<option value="cin">Cinncinati Bengals</option>
+							<option value="cle">Cleveland Browns</option>
+							<option value="dal">Dallas Cowboys</option>
+							<option value="den">Denver Broncos</option>
+							<option value="det">Datroit Lions</option>
+							<option value="gb">Green Bay Packers</option>
+							<option value="hou">Houston Texans</option>
+							<option value="ind">Indianapolis Colts</option>
+							<option value="jck">Jacksonville Jaguars</option>
+							<option value="kc">Kansas City Chiefs</option>
+							<option value="lac">Los Angeles Chargers</option>
+							<option value="lar">Los Angeles Rams</option>
+							<option value="mai">Miami Dolphins</option>
+							<option value="mn">Minnesota Vikings</option>
+							<option value="ne">New England Patriots</option>
+							<option value="no">New Orleans Saints</option>
+							<option value="nyg">New York Giants</option>
+							<option value="nyj">New York Jets</option>
+							<option value="oak">Oakland Raiders</option>
+							<option value="phi">Philadelphia Eagles</option>
+							<option value="pit">Pittsburgh Steelers</option>
+							<option value="sea">Seattle Seahawks</option>
+							<option value="sf">San Francisco 49ers</option>
+							<option value="tb">Tampa Bay Buccaneers</option>
+							<option value="tn">Tenessee Titans</option>
+							<option value="wsh">Washington Redskins</option>
+						</select>
+					</form>
 				</div>
 			</div> <!---close team select/reset row------>
 
@@ -88,12 +158,12 @@
 			<div class="row">
 				<!------row for logos, team name, and quarter score card-->
 				<div class="col-sm-3" style="align-content:center; text-align:center;">
-					<img src="~/Content/images/nfl.png" style="width:200px; height: 200px;" /> <br />
+					<img id=" "team1Logo" src="~/Content/images/nfl.png" style="width:200px; height: 200px;" /> <br />
 					<label id="team1Name">Team 1 Name</label>
 				</div>
 				<div class="col-sm-6" style="align-content:center; margin: auto 0;">
 					<div class="quarterScores">
-						<table class="table table-bordered">
+						<table class="table table-bordered table-responsive-sm">
 							<thead>
 								<tr>
 									<th></th>
@@ -108,21 +178,21 @@
 							<tbody>
 								<tr>
 									<td style="font-size: 12pt;"><label id="team1ScoreNameLbl">team 1 name</label></td>
-									<td style="font-size: 12pt;"><label id="team1Q1Score">0</label></td>
-									<td style="font-size: 12pt;"><label id="team1Q2Score">0</label></td>
-									<td style="font-size: 12pt;"><label id="team1Q3Score">0</label></td>
-									<td style="font-size: 12pt;"><label id="team1Q4Score">0</label></td>
-									<td style="font-size: 12pt;"><label id="team1OTScore">0</label></td>
-									<td style="font-size: 12pt;"><label id="team1FinalScore">0</label></td>
+									<td style="font-size: 12pt;"><label id="team1Q1Score"></label></td>
+									<td style="font-size: 12pt;"><label id="team1Q2Score"></label></td>
+									<td style="font-size: 12pt;"><label id="team1Q3Score"></label></td>
+									<td style="font-size: 12pt;"><label id="team1Q4Score"></label></td>
+									<td style="font-size: 12pt;"><label id="team1OTScore"></label></td>
+									<td style="font-size: 12pt;"><label id="team1FinalScore"></label></td>
 								</tr>
 								<tr>
 									<td style="font-size: 12pt;"><label id="team2ScoreNameLbl">team 2 name</label></td>
-									<td style="font-size: 12pt;"><label id="team2Q1Score">0</label></td>
-									<td style="font-size: 12pt;"><label id="team2Q2Score">0</label></td>
-									<td style="font-size: 12pt;"><label id="team2Q3Score">0</label></td>
-									<td style="font-size: 12pt;"><label id="team2Q4Score">0</label></td>
-									<td style="font-size: 12pt;"><label id="team2OTScore">0</label></td>
-									<td style="font-size: 12pt;"><label id="team2FinalScore">0</label></td>
+									<td style="font-size: 12pt;"><label id="team2Q1Score"></label></td>
+									<td style="font-size: 12pt;"><label id="team2Q2Score"></label></td>
+									<td style="font-size: 12pt;"><label id="team2Q3Score"></label></td>
+									<td style="font-size: 12pt;"><label id="team2Q4Score"></label></td>
+									<td style="font-size: 12pt;"><label id="team2OTScore"></label></td>
+									<td style="font-size: 12pt;"><label id="team2FinalScore"></label></td>
 								</tr>
 							</tbody>
 						</table>
@@ -130,8 +200,8 @@
 					</div>
 				</div>
 				<div class="col-sm-3" style="align-content:center; text-align:center;">
-					<img src="~/Content/images/nfl.png" style="width:200px; height: 200px;" /> <br />
-					<label id="team2Name">Team 2 Name</label>
+					<img id="team2Logo" src="~/Content/images/nfl.png" style="width:200px; height: 200px;" /> <br />
+					<label id="teamName">Team 2 Name</label>
 				</div>
 			</div> <!------close row for logos, team names, and score card-->
 
@@ -174,12 +244,12 @@
 
 		<div class="team1Area">
 			<!----open team1 Area------------------------------------------------------------------->
-			team 1
+			<label id="team1StatsAreaName">Team 1 Name</label>
 			<form>
 				<fieldset>
 					<legend>Statistics</legend>
 					<div class="col">
-						<table class="table table-bordered">
+						<table class="table table-bordered table-responsive-sm">
 							<tbody>
 								<tr>
 									<td>Touchdowns: <label id="team1TocuhdownLbl">0</label></td>
@@ -214,9 +284,6 @@
 						</table>
 							
 					</div>
-
-
-
 				</fieldset>
 			</form>
 		</div> <!-----close team 1 area------------------------------------------------------------->
@@ -224,12 +291,12 @@
 
 		<div class="team2Area">
 			<!---open team 2 Area------------------------------------------------------------------->
-			team2
+			<label id="team1StatsAreaName">Team 2 Stats</label>
 			<form>
 				<fieldset>
 					<legend>Statistics</legend>
 					<div class="col">
-						<table class="table table-bordered">
+						<table class="table table-bordered table-responsive-sm">
 							<tbody>
 								<tr>
 									<td>Touchdowns: <label id="team2TocuhdownLbl">0</label></td>
@@ -273,7 +340,7 @@
 		<div class="team1InputArea">
 			<fieldset>
 				<legend>Input</legend>
-				<table class="table table-bordered">
+				<table class="table table-bordered table-responsive-sm">
 					<tbody>
 						<tr>
 							<td><button id="team1Touchdown">Touchdown</button></td> <!--adds points to total score, counter label+= 6-->
@@ -308,7 +375,7 @@
 		<div class="team1InputArea">
 			<fieldset>
 				<legend>Input</legend>
-				<table class="table table-bordered">
+				<table class="table table-bordered table-responsive-sm">
 					<tbody>
 						<tr>
 							<td><button id="team2Touchdown">Touchdown</button></td> <!--adds points to total score, counter label+= 6-->
