@@ -1,17 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using RealTimeSportsStatistics.Shared.Orchestrators;
+using RealTimeSportsStatistics.Web.Models;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace RealTimeSportsStatistics.Web.Controllers
 {
     public class TeamController : Controller
     {
+        private TeamOrchestrator _teamOrchestator = new TeamOrchestrator();
         // GET: Team
-        public ActionResult Statistics()
+        public async Task<ActionResult> Statistics()
         {
-            return View();
+            var teamDisplayModel = new TeamDisplayModel
+            {
+               Teams = await _teamOrchestator.GetAllTeams()
+            };
+
+            return View(teamDisplayModel);
         }
     }
 

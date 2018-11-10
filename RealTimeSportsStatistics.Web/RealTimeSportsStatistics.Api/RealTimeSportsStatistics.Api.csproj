@@ -110,6 +110,16 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RealTimeSportsStatistics.Domain\RealTimeSportsStatistics.Domain.csproj">
+      <Project>{2975CFC3-6C8C-43F8-8B00-FD158B57820F}</Project>
+      <Name>RealTimeSportsStatistics.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RealTimeSportsStatistics.Shared\RealTimeSportsStatistics.Shared.csproj">
+      <Project>{F4E30F56-A0FD-4ACE-A027-6EF078DFEC48}</Project>
+      <Name>RealTimeSportsStatistics.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

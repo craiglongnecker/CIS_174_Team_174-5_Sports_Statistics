@@ -11,16 +11,30 @@
 		<table class="table table-bordered">
 			<thead>
 				<tr>
-					<th>Team ID</th>
 					<th>Team City</th>
 					<th>Team Name</th>
 					<th>Wins</th>
 					<th>Losses</th>
 				</tr>
-			</thead>
-			<tbody>
-				<!--the for loop for this section is in a .txt file in the views folder of .web.  Wont let me comment out and causes a crash until Db has data in it-->
-				
+				</thead>
+				<tbody>
+				@foreach (var team in Model.Teams)
+				{
+				<tr>
+					<td>
+						@team.TeamCity
+					</td>
+					<td>
+						@team.TeamName
+					</td>
+					<td>
+						@team.Wins
+					</td>
+					<td>
+						@team.Losses
+					</td>
+				</tr>
+				}
 			</tbody>
 		</table>
 	</div>
@@ -28,5 +42,5 @@
 </html>
 
 <link href="~/Content/bootstrap.min.css" />
-<link href="~/Scripts/jquery-3.0.0.min.js" />
+<link href="~/Scripts/jquery-3.3.1.min.js" />
 <link href="~/Scripts/bootstrap.min.js" />
