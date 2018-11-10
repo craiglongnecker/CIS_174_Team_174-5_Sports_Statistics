@@ -1,9 +1,11 @@
-﻿
-@{
+﻿@{
 	ViewBag.Title = "Game";
 }
 <head>
 	<link href="~/Content/bootstrap.css" type="text/css" />
+	<script src="~/Scripts/GameScripts/Game.js" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+
 	<style type="text/css">
 		#container {
 			height: auto;
@@ -67,6 +69,7 @@
 	</style>
 </head>
 <body>
+
 	<div id="container">
 		<div class="scoreArea">
 			<!---------open area for scoreArea---------------------------------------------->
@@ -115,7 +118,7 @@
 				</div>
 				<div class="col" style="text-align: right;">
 					<form action="./" method="GET">
-						<select name="team1Select" >
+						<select name="team1Select">
 							<option value="default">Pick A Team</option>
 							<option value="atl">Atlanta Falcons</option>
 							<option value="az">Arizona Cardinals</option>
@@ -153,12 +156,10 @@
 				</div>
 			</div> <!---close team select/reset row------>
 
-
-
 			<div class="row">
 				<!------row for logos, team name, and quarter score card-->
 				<div class="col-sm-3" style="align-content:center; text-align:center;">
-					<img id=" "team1Logo" src="~/Content/images/nfl.png" style="width:200px; height: 200px;" /> <br />
+					<img id=" " team1Logo" src="~/Content/images/nfl.png" style="width:200px; height: 200px;" /> <br />
 					<label id="team1Name">Team 1 Name</label>
 				</div>
 				<div class="col-sm-6" style="align-content:center; margin: auto 0;">
@@ -196,7 +197,6 @@
 								</tr>
 							</tbody>
 						</table>
-
 					</div>
 				</div>
 				<div class="col-sm-3" style="align-content:center; text-align:center;">
@@ -204,8 +204,6 @@
 					<label id="teamName">Team 2 Name</label>
 				</div>
 			</div> <!------close row for logos, team names, and score card-->
-
-
 
 			<div class="row">
 				<!---open row for team score, quarter selection----->
@@ -252,26 +250,22 @@
 						<table class="table table-bordered table-responsive-sm">
 							<tbody>
 								<tr>
-									<td>Touchdowns: <label id="team1TocuhdownLbl">0</label></td>
+									<td>Touchdowns: <label id="team1TouchdownLbl" value="0"></label></td>
 									<td>Field Goals: <label id="team1FieldGoalLbl">0</label></td>
-								</tr>
-								<tr>
-									<td>Passing Yards: <label id="team1PassYardsLbl">0</label></td>
 									<td>First Downs: <label id="team1FirstDownLbl">0</label></td>
 								</tr>
 								<tr>
+									<td>Passing Yards: <label id="team1PassYardsLbl">0</label></td>
 									<td>Completed Passes: <label id="team1PassComLbl">0</label></td>
 									<td>Intercepted Passes: <label id="team1PassIntLbl">0</label></td>
 								</tr>
 								<tr>
 									<td>Sacks: <label id="team1SackLbl">0</label></td>
 									<td>Yards Lost: <label id="team1YardLostLbl">0</label></td>
-								</tr>
-								<tr>
 									<td>Punts: <label id="team1PuntLabel">0</label></td>
-									<td>Fumbles: <label id="team1FumbleLbl">0</label></td>
 								</tr>
 								<tr>
+									<td>Fumbles: <label id="team1FumbleLbl">0</label></td>
 									<td>Rushes: <label id="team1RushLabel">0</label></td>
 									<td>Rushing Yards: <label id="team1RushYardsLbl">0</label></td>
 								</tr>
@@ -279,15 +273,13 @@
 									<td>Penalties: <label id="team1PenLbl">0</label></td>
 									<td>Penalty Yards: <label id="team1PenYardsLbl">0</label></td>
 								</tr>
-								<tr></tr>
 							</tbody>
 						</table>
-							
+
 					</div>
 				</fieldset>
 			</form>
 		</div> <!-----close team 1 area------------------------------------------------------------->
-
 
 		<div class="team2Area">
 			<!---open team 2 Area------------------------------------------------------------------->
@@ -299,26 +291,22 @@
 						<table class="table table-bordered table-responsive-sm">
 							<tbody>
 								<tr>
-									<td>Touchdowns: <label id="team2TocuhdownLbl">0</label></td>
+									<td>Touchdowns: <label id="team2TouchdownLbl" name="team2TouchdownLbl">0</label></td>
 									<td>Field Goals: <label id="team2FieldGoalLbl">0</label></td>
-								</tr>
-								<tr>
-									<td>Passing Yards: <label id="team2PassYardsLbl">0</label></td>
 									<td>First Downs: <label id="team2FirstDownLbl">0</label></td>
 								</tr>
 								<tr>
+									<td>Passing Yards: <label id="team2PassYardsLbl">0</label></td>
 									<td>Completed Passes: <label id="team2PassComLbl">0</label></td>
 									<td>Intercepted Passes: <label id="team2PassIntLbl">0</label></td>
 								</tr>
 								<tr>
 									<td>Sacks: <label id="team2SackLbl">0</label></td>
 									<td>Yards Lost: <label id="team2YardLostLbl">0</label></td>
-								</tr>
-								<tr>
 									<td>Punts: <label id="team2PuntLabel">0</label></td>
-									<td>Fumbles: <label id="team2FumbleLbl">0</label></td>
 								</tr>
 								<tr>
+									<td>Fumbles: <label id="team2FumbleLbl">0</label></td>
 									<td>Rushes: <label id="team2RushLabel">0</label></td>
 									<td>Rushing Yards: <label id="team2RushYardsLbl">0</label></td>
 								</tr>
@@ -326,13 +314,9 @@
 									<td>Penalties: <label id="team2PenLbl">0</label></td>
 									<td>Penalty Yards: <label id="team2PenYardsLbl">0</label></td>
 								</tr>
-								<tr></tr>
 							</tbody>
 						</table>
 					</div>
-
-
-
 				</fieldset>
 			</form>
 		</div> <!-----close team 2 area-------------------------------------------------------------->
@@ -343,7 +327,7 @@
 				<table class="table table-bordered table-responsive-sm">
 					<tbody>
 						<tr>
-							<td><button id="team1Touchdown">Touchdown</button></td> <!--adds points to total score, counter label+= 6-->
+							<td><button id="team1Touchdown" onclick="team1Touchdown()" >Touchdown</button></td> <!--adds points to total score, counter label+= 6-->
 							<td><button id="team1ExtraPoint">Extra Point</button></td> <!--adds one point to score-->
 							<td><button id="team1FieldGoal">Field Goal</button></td> <!--adds 3 pts to score, field goal count++-->
 							<td><button id="team1FirstDown">First Down</button></td> <!-- first down count++-->
@@ -369,7 +353,7 @@
 					</tbody>
 				</table>
 				<input type="submit" value="Submit">
-				</fieldset>
+			</fieldset>
 		</div>
 
 		<div class="team1InputArea">

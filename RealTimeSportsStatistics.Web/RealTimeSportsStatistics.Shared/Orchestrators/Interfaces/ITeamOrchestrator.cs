@@ -1,12 +1,11 @@
-﻿using System;
+﻿using RealTimeSportsStatistics.Shared.ViewModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace RealTimeSportsStatistics.Shared.Orchestrators.Interfaces
 {
-    interface ITeamOrchestrator
+    public interface ITeamOrchestrator
     {
+        Task<List<TeamViewModel>> GetAllTeams();
     }
 }
