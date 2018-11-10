@@ -250,7 +250,7 @@
 						<table class="table table-bordered table-responsive-sm">
 							<tbody>
 								<tr>
-									<td>Touchdowns: <label id="team1TouchdownLbl" value="0"></label></td>
+									<td>Touchdowns: <label id="team1TouchdownLbl" value="0">0</label></td>
 									<td>Field Goals: <label id="team1FieldGoalLbl">0</label></td>
 									<td>First Downs: <label id="team1FirstDownLbl">0</label></td>
 								</tr>
@@ -327,10 +327,11 @@
 				<table class="table table-bordered table-responsive-sm">
 					<tbody>
 						<tr>
-							<td><button id="team1Touchdown" onclick="team1Touchdown()" >Touchdown</button></td> <!--adds points to total score, counter label+= 6-->
-							<td><button id="team1ExtraPoint">Extra Point</button></td> <!--adds one point to score-->
-							<td><button id="team1FieldGoal">Field Goal</button></td> <!--adds 3 pts to score, field goal count++-->
-							<td><button id="team1FirstDown">First Down</button></td> <!-- first down count++-->
+							<td><button id="team1Touchdown" onclick="team1Touchdown()">Touchdown</button></td> <!--adds points to total score, counter label+= 6-->
+							<td><button id="team1ExtraPoint" onclick="team1ExtraPoint()">Extra Point</button><br /> <!--adds one point to score-->
+								<button id="team1Conversion" onclick="team1Conversion()">2 Pt Conversion</button></td> <!--adds 2 point to score-->
+							<td><button id="team1FieldGoal" onclick="team1FieldGoal()">Field Goal</button></td> <!--adds 3 pts to score, field goal count++-->
+							<td><button id="team1FirstDown" onclick="team1FirstDown()">First Down</button></td> <!-- first down count++-->
 						</tr>
 						<tr>
 							<td><button id="team1PassCom">Pass Completed</button></td> <!--pass completed lbl ++-->
@@ -362,10 +363,11 @@
 				<table class="table table-bordered table-responsive-sm">
 					<tbody>
 						<tr>
-							<td><button id="team2Touchdown">Touchdown</button></td> <!--adds points to total score, counter label+= 6-->
-							<td><button id="team2ExtraPoint">Extra Point</button></td> <!--adds one point to score-->
-							<td><button id="team2FieldGoal">Field Goal</button></td> <!--adds 3 pts to score, field goal count++-->
-							<td><button id="team2FirstDown">First Down</button></td> <!-- first down count++-->
+							<td><button id="team2Touchdown" onclick="team2Touchdown()">Touchdown</button></td> <!--adds points to total score, counter label+= 6-->
+							<td><button id="team2ExtraPoint" onclick="team2ExtraPoint()">Extra Point</button><br /> <!--adds one point to score-->
+							<button id="team2Conversion" onclick="team2Conversion()">2 Pt Conversion</button></td> <!--adds 2 point to score-->
+							<td><button id="team2FieldGoal" onclick="team2FieldGoal()">Field Goal</button></td> <!--adds 3 pts to score, field goal count++-->
+							<td><button id="team2FirstDown" onclick="team2FirstDown()">First Down</button></td> <!-- first down count++-->
 						</tr>
 						<tr>
 							<td><button id="team2PassCom">Pass Completed</button></td> <!--pass completed lbl ++-->
