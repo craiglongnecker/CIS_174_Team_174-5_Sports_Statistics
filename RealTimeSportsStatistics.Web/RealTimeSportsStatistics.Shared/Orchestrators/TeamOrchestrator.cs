@@ -10,11 +10,11 @@ namespace RealTimeSportsStatistics.Shared.Orchestrators
 {
     public class TeamOrchestrator : ITeamOrchestrator
     {
-        private Domain.TeamOrchestrator _teamContext;
+        private TeamContext _teamContext;
 
         public TeamOrchestrator()
         {
-            _teamContext = new Domain.TeamOrchestrator();
+            _teamContext = new TeamContext();
         }
         public async Task<List<TeamViewModel>> GetAllTeams()
         {
