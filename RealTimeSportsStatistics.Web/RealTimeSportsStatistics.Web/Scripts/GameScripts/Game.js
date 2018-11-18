@@ -1,19 +1,57 @@
-﻿function team1Score() { //adds score to team1 current score, and score in current quarter
-	let scoreSelect = document.getElementById('team1ScoreSelect');
-	var selected_score = scoreSelect.options[scoreSelect.selectedIndex].text;
-	var selected_score_int = parseInt(selected_score, 10);
+﻿function team1Touchdown() { //adds 6 to team1 current score, increments team2 touchdown count by 1
+	let TDlbl = document.getElementById('team1TouchdownLbl');
+	var current_count = TDlbl.innerText;
+    var current_count_int = parseInt(current_count, 10) + 1;
+    if (validateNumber("team1PassYardsInput", -100, 100, "errorTeam1")) {
+        document.getElementById("team1TouchdownLbl").innerHTML = current_count_int.toString();
+    }
 
 	let ScoreLbl = document.getElementById('team1CurrentScore');
 	var current_score = ScoreLbl.innerText;
-	var current_score_int = parseInt(current_score, 10) + selected_score_int;
+    var current_score_int = parseInt(current_score, 10) + 6;
+    if (validateNumber("team1PassYardsInput", -100, 100, "errorTeam1")) {
+        document.getElementById("team1CurrentScore").innerHTML = current_score_int.toString();
+    }
+}
+
+function team2Touchdown() { //adds 6 to team2 current score, increments team2 touchdown count by 1
+	let TDlbl = document.getElementById('team2TouchdownLbl');
+	var current_count = TDlbl.innerText;
+	var current_count_int = parseInt(current_count, 10) + 1;
+	document.getElementById("team2TouchdownLbl").innerHTML = current_count_int.toString();
+
+	let ScoreLbl = document.getElementById('team2CurrentScore');
+	var current_score = ScoreLbl.innerText;
+	var current_score_int = parseInt(current_score, 10) + 6;
+	document.getElementById("team2CurrentScore").innerHTML = current_score_int.toString();
+}
+
+function team1ExtraPoint() { //adds 1 point to team1 current score
+	let ScoreLbl = document.getElementById('team1CurrentScore');
+	var current_score = ScoreLbl.innerText;
+	var current_score_int = parseInt(current_score, 10) + 1;
 	document.getElementById("team1CurrentScore").innerHTML = current_score_int.toString();
 }
 
-function team1Fumble() { //increments team1 fumble count by 1
-	let lbl = document.getElementById('team1FumbleLbl');
-	var current_count = lbl.innerText;
-	var current_count_int = parseInt(current_count, 10) + 1;
-	document.getElementById("team1FumbleLbl").innerHTML = current_count_int.toString();
+function team2ExtraPoint() { //adds 1 point to team 2 current score
+	let ScoreLbl = document.getElementById('team2CurrentScore');
+	var current_score = ScoreLbl.innerText;
+	var current_score_int = parseInt(current_score, 10) + 1;
+	document.getElementById("team2CurrentScore").innerHTML = current_score_int.toString();
+}
+
+function team1Conversion() { //adds 2 points to team1 current score
+	let ScoreLbl = document.getElementById('team1CurrentScore');
+	var current_score = ScoreLbl.innerText;
+	var current_score_int = parseInt(current_score, 10) + 2;
+	document.getElementById("team1CurrentScore").innerHTML = current_score_int.toString();
+}
+
+function team2Conversion() { //adds 2 points to team2 current score
+	let ScoreLbl = document.getElementById('team2CurrentScore');
+	var current_score = ScoreLbl.innerText;
+	var current_score_int = parseInt(current_score, 10) + 2;
+	document.getElementById("team2CurrentScore").innerHTML = current_score_int.toString();
 }
 
 function team1FieldGoal() { //adds 3 to team1 current score, increments team 2 field goal count by 1
@@ -54,3 +92,40 @@ function team2FirstDown() { //increments team 2 first down count by 1
 	document.getElementById("team2FirstDownLbl").innerHTML = current_count_int.toString();
 }
 
+function team1PassComplete() {
+    if (validateNumber("team1PassYardsInput", -100, 100, "errorTeam1")) {
+        let PYlbl = document.getElementById('team1PassYardsLbl');
+        let PYtb = document.getElementById("team1PassYardsInput");
+        var passing_yards = PYtb.value;
+        var passing_yards_int = parseInt(passing_yards, 10);
+        var current_count = PYlbl.innerText;
+        var current_count_int = parseInt(current_count, 10) + passing_yards_int;
+        document.getElementById("team1PassYardsLbl").innerHTML = current_count_int.toString();
+
+        let PClbl = document.getElementById('team1PassComLbl');
+        var current_count = PClbl.innerText;
+        var current_count_int = parseInt(current_count, 10) + 1;
+        document.getElementById("team1PassComLbl").innerHTML = current_count_int.toString();
+    }
+}
+
+/*
+ * 
+ * 
+ * 
+ */
+function validateNumber(id, low, high, errormsgid) {
+    var element = document.getElementById(id);
+    var input = parseInt(element.value);
+    var errormsg = document.getElementById(errormsgid);
+    if (input <= high && input >= low) {
+        if (errormsg.style.visibility === "visible") {
+            errormsg.style.visibility = "hidden";
+        }
+        return true;
+    }
+    if (errormsg.style.visibility === "hidden") {
+        errormsg.style.visibility = "visible";
+    }
+    return false;
+}

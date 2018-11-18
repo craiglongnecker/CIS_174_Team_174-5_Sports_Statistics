@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace RealTimeSportsStatistics.Domain
 {
-    public class TeamContext : DbContext
+    public class TeamOrchestrator : DbContext
     {
         public DbSet<Team> Teams { get; set; }
     }

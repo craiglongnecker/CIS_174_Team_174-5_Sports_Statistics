@@ -16,3 +16,18 @@ textarea {
     max-width: 280px;
 }
 
+.inputClass {
+    display: inline-block;
+    margin-right: 0px;
+    width: fit-content;
+    float: left;
+}
+
+.errormsg {
+    color: red;
+    display: inline-block;
+    margin-right: 0px;
+    width: fit-content;
+    float: right;
+}
+
