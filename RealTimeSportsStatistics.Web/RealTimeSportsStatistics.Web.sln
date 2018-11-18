@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeSportsStatistics.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeSportsStatistics.Shared", "RealTimeSportsStatistics.Shared\RealTimeSportsStatistics.Shared.csproj", "{F4E30F56-A0FD-4ACE-A027-6EF078DFEC48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealTimeSportsStatistics.Test", "RealTimeSportsStatistics.Test\RealTimeSportsStatistics.Test.csproj", "{48EA894E-28BC-4081-9B63-8620978F1705}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F4E30F56-A0FD-4ACE-A027-6EF078DFEC48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4E30F56-A0FD-4ACE-A027-6EF078DFEC48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4E30F56-A0FD-4ACE-A027-6EF078DFEC48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48EA894E-28BC-4081-9B63-8620978F1705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48EA894E-28BC-4081-9B63-8620978F1705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48EA894E-28BC-4081-9B63-8620978F1705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48EA894E-28BC-4081-9B63-8620978F1705}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
