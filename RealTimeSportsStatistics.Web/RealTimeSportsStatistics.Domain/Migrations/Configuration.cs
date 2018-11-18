@@ -6,14 +6,14 @@ namespace RealTimeSportsStatistics.Domain.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<RealTimeSportsStatistics.Domain.TeamContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<RealTimeSportsStatistics.Domain.TeamOrchestrator>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(RealTimeSportsStatistics.Domain.TeamContext context)
+        protected override void Seed(RealTimeSportsStatistics.Domain.TeamOrchestrator context)
         {
             //  This method will be called after migrating to the latest version.
 
