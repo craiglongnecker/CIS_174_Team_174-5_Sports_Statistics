@@ -5,6 +5,42 @@
 	<link href="~/Content/bootstrap.css" type="text/css" />
 	<script src="~/Scripts/GameScripts/Game.js" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script>
+        function background(team, side) {
+            var primaryColor, secondaryColor;
+
+            switch (team) {
+                case 'mn':
+                    primaryColor = '#4F2683';
+                    secondaryColor = '#FFC62F';
+                    break;
+                case 'ne':
+                    primaryColor = '#002244';
+                    secondaryColor = '#C60C30';
+                    break;
+                default:
+                    primaryColor = '#FFFFFF';
+                    secondaryColor = '#000000';
+            }
+
+            if (side == 'away')
+            {
+                document.getElementById("team1Area").style.backgroundColor = primaryColor;
+                document.getElementById("team1Area").style.color = secondaryColor;
+
+                document.getElementById("team1InputArea").style.backgroundColor = primaryColor;
+                document.getElementById("team1InputArea").style.color = secondaryColor;
+            }
+            else
+            {
+                document.getElementById("team2Area").style.backgroundColor = primaryColor;
+                document.getElementById("team2Area").style.color = secondaryColor;
+
+                document.getElementById("team2InputArea").style.backgroundColor = primaryColor;
+                document.getElementById("team2InputArea").style.color = secondaryColor;
+            }
+        }
+    </script>
 
 	<style type="text/css">
 		#container {
@@ -77,7 +113,7 @@
 				<!--row for select teams and reset button-->
 				<div class="col" style="text-align:left;">
 					<form action="./" method="GET">
-						<select name="team1Select">
+						<select name="team1Select" onchange="background(this.value, 'away')">
 							<option value="default">Pick A Team</option>
 							<option value="atl">Atlanta Falcons</option>
 							<option value="az">Arizona Cardinals</option>
@@ -88,7 +124,7 @@
 							<option value="cle">Cleveland Browns</option>
 							<option value="dal">Dallas Cowboys</option>
 							<option value="den">Denver Broncos</option>
-							<option value="det">Datroit Lions</option>
+							<option value="det">Detroit Lions</option>
 							<option value="gb">Green Bay Packers</option>
 							<option value="hou">Houston Texans</option>
 							<option value="ind">Indianapolis Colts</option>
@@ -118,7 +154,7 @@
 				</div>
 				<div class="col" style="text-align: right;">
 					<form action="./" method="GET">
-						<select name="team1Select">
+						<select name="team2Select" onchange="background(this.value, 'home')">
 							<option value="default">Pick A Team</option>
 							<option value="atl">Atlanta Falcons</option>
 							<option value="az">Arizona Cardinals</option>
@@ -129,7 +165,7 @@
 							<option value="cle">Cleveland Browns</option>
 							<option value="dal">Dallas Cowboys</option>
 							<option value="den">Denver Broncos</option>
-							<option value="det">Datroit Lions</option>
+							<option value="det">Detroit Lions</option>
 							<option value="gb">Green Bay Packers</option>
 							<option value="hou">Houston Texans</option>
 							<option value="ind">Indianapolis Colts</option>
@@ -240,7 +276,7 @@
 		</div> <!-----close score area-------------------------------------------------------------->
 
 
-		<div class="team1Area">
+		<div class="team1Area" id="team1Area">
 			<!----open team1 Area------------------------------------------------------------------->
 			<label id="team1StatsAreaName">Team 1 Name</label>
 			<form>
@@ -281,7 +317,7 @@
 			</form>
 		</div> <!-----close team 1 area------------------------------------------------------------->
 
-		<div class="team2Area">
+		<div class="team2Area" id="team2Area">
 			<!---open team 2 Area------------------------------------------------------------------->
 			<label id="team1StatsAreaName">Team 2 Stats</label>
 			<form>
@@ -321,7 +357,7 @@
 			</form>
 		</div> <!-----close team 2 area-------------------------------------------------------------->
 
-		<div class="team1InputArea">
+		<div class="team1InputArea" id="team1InputArea">
 			<fieldset>
 				<legend>Input</legend>
 				<table class="table table-bordered table-responsive-sm">
@@ -357,7 +393,7 @@
 			</fieldset>
 		</div>
 
-		<div class="team1InputArea">
+		<div class="team2InputArea" id="team2InputArea">
 			<fieldset>
 				<legend>Input</legend>
 				<table class="table table-bordered table-responsive-sm">
