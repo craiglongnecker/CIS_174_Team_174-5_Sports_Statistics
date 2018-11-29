@@ -362,11 +362,12 @@
 			document.getElementById("team2PassYardsInput").value = null;
 		}
 
+		
 		function team1Sack() {
 			let yards = document.getElementById('team1YardsLostInput').value;
 			var yards_int = parseFloat(yards, 10);
 
-			let YardsLbl = document.getElementById('team1TotalYardsLbl'); //--add to total yards
+			let YardsLbl = document.getElementById('team1TotalYardsLbl'); 
 			var current_yards = YardsLbl.innerText;
 			var current_yards_int = parseFloat(current_yards, 10) - yards_int;
 			document.getElementById("team1TotalYardsLbl").innerHTML = current_yards_int.toString();
@@ -396,6 +397,7 @@
 			document.getElementById("team2YardsLostInput").value = null;
 		}
 
+		var team1Avg = 0;
 		function team1Punt() {
 			let count_lbl = document.getElementById('team1PuntLabel');
 			var current_count = count_lbl.innerText;
@@ -404,16 +406,15 @@
 
 			let yards = document.getElementById('team1PuntYardInput').value;
 			var punt_yards_int = parseFloat(yards, 10);
+			team1Avg += punt_yards_int;
 
 			let avg_lbl = document.getElementById('team1AverageLbl');
-			var current_avg = avg_lbl.innerText;
-			var current_avg_int = parseFloat(current_avg, 10) + punt_yards_int;
-			var update = current_avg_int / current_count_int;
-			document.getElementById("team1AverageLbl").innerHTML = update.toString();
+			document.getElementById("team1AverageLbl").innerHTML = (team1Avg / current_count_int).toFixed(2);
 
 			document.getElementById("team1PuntYardInput").value = null;
 		}
 
+		var team2PuntYards = 0;
 		function team2Punt() {
 			let count_lbl = document.getElementById('team2PuntLabel');
 			var current_count = count_lbl.innerText;
@@ -422,12 +423,10 @@
 
 			let yards = document.getElementById('team2PuntYardInput').value;
 			var punt_yards_int = parseFloat(yards, 10);
+			team2PuntYards += punt_yards_int;
 
 			let avg_lbl = document.getElementById('team2AverageLbl');
-			var current_avg = avg_lbl.innerText;
-			var current_avg_int = parseFloat(current_avg, 10) + punt_yards_int;
-			var update = current_avg_int / current_count_int;
-			document.getElementById("team2AverageLbl").innerHTML = update.toString();
+			document.getElementById("team2AverageLbl").innerHTML = (team2PuntYards / current_count_int).toFixed(2);
 
 			document.getElementById("team2PuntYardInput").value = null;
 		}
@@ -766,19 +765,19 @@
 								</select>
 							</td>
 							<td>
-								<button id="team1Fumble" onclick="team1Fumble()">Fumble</button><!--DONE-->
-								<br /><button id="team1FumbleLost" onclick="team1FumbleLost()">Fumble Lost</button><!--DONE-->
+								<button id="team1Fumble" onclick="team1Fumble()">Fumble</button>
+								<br /><button id="team1FumbleLost" onclick="team1FumbleLost()">Fumble Lost</button>
 							</td> <!--fumble lost lbl++-->
 						</tr>
 						<tr>
-							<td><button id="team1PassInt" onclick="team1PassIntercepted()">Pass Intercepted</button></td> <!-- DONE-->
-							<td><button id="team1PassCom" onclick="team1PassCompleted()">Pass Completed</button></td> <!--DONE ++-->
+							<td><button id="team1PassInt" onclick="team1PassIntercepted()">Pass Intercepted</button></td> 
+							<td><button id="team1PassCom" onclick="team1PassCompleted()">Pass Completed</button></td> 
 							<td><button id="team1PassIncom" onclick="team1PassIncomplete()">Pass Incompleted</button></td> <!--pass completed lbl ++-->
 							<td><button id="team1PassYards" onclick="team1PassYards()">Passing Yards</button><br /><input size="2" id="team1PassYardsInput"></td>	<!--add input to total passing yard stat-->
 						</tr>
 						<tr>
 							<td>
-								<button id="team1sack" onclick="team1Sack(), validateNumber('team1YardsLostInput',0, 100, 'errorTeam1')">Sack</button> <!--team 1 sack counter++-->
+								<button id="team1sack" onclick="team1Sack(), validateNumber('team1YardsLostInput', 0, 100, 'errorTeam1')">Sack</button> <!--team 1 sack counter++-->
 								<br />Yards Lost: <input size="2" type="text" id="team1YardsLostInput">
 							</td> <!--add input value to current yards lost yards total-->
 							<td>
