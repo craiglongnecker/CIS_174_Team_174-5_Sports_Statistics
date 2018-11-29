@@ -20,22 +20,6 @@
         public int Team1TotalFumblesLost;
         public int Team1TotalNumberOfPunts;
         public int Team1TotalNumberOfPenalties;
-        public int Team1RushAttempt;
-        public int Team1RushingYards;
-        public int Team1FirstDown;
-        public int Team1Score;
-        public int Team1PassIncomplete;
-        public int Team1PassCompleted;
-        public int Team1PassIntercepted;
-        public int Team1PassingYards;
-        public int Team1Sack;
-        public int Team1SackYardsLost;
-        public int Team1Fumble;
-        public int Team1FumbleLost;
-        public int Team1Punt;
-        public int Team1PuntYards;
-        public int Team1Penalty;
-        public int Team1PenaltyYards;
         public string Team1Result;
 
         public int Team2Id;
@@ -56,22 +40,6 @@
         public int Team2TotalFumblesLost;
         public int Team2TotalNumberOfPunts;
         public int Team2TotalNumberOfPenalties;
-        public int Team2RushAttempt;
-        public int Team2RushingYards;
-        public int Team2FirstDown;
-        public int Team2Score;
-        public int Team2PassIncomplete;
-        public int Team2PassCompleted;
-        public int Team2PassIntercepted;
-        public int Team2PassingYards;
-        public int Team2Sack;
-        public int Team2SackYardsLost;
-        public int Team2Fumble;
-        public int Team2FumbleLost;
-        public int Team2Punt;
-        public int Team2PuntYards;
-        public int Team2Penalty;
-        public int Team2PenaltyYards;
         public string Team2Result;
     }
 }
