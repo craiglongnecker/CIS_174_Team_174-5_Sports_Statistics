@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
-namespace RealTimeSportsStatistics.Web.Controllers
+namespace Error.Controllers
 {
-    public class HomeController : Controller
+    public class ErrorController : Controller
     {
-        // GET: Home
-        [HandleError]
+        //  
+        // GET: /Error/  
         public ActionResult Index()
         {
             return View();
         }
-
-      
+        public ActionResult NotFound()
+        {
+            return View();
+        }
     }
 }

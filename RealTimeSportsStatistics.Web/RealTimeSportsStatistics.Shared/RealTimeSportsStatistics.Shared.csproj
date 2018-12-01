@@ -54,10 +54,15 @@
     <Compile Include="Orchestrators\Interfaces\ITeamOrchestrator.cs" />
     <Compile Include="Orchestrators\TeamOrchestrator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ExistingStatisticsService.cs" />
     <Compile Include="Services\ExistingTeamService.cs" />
+    <Compile Include="Services\Interfaces\IExistingStatisticsService.cs" />
     <Compile Include="Services\Interfaces\IExistingTeamService.cs" />
+    <Compile Include="Services\Interfaces\IStatisticsService.cs" />
     <Compile Include="Services\Interfaces\ITeamService.cs" />
+    <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="Services\TeamService.cs" />
+    <Compile Include="ViewModels\StatisticsViewModel.cs" />
     <Compile Include="ViewModels\TeamViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
