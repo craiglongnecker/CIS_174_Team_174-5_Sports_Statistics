@@ -51,7 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Orchestrators\Interfaces\IStatisticsOrchestrator.cs" />
     <Compile Include="Orchestrators\Interfaces\ITeamOrchestrator.cs" />
+    <Compile Include="Orchestrators\StatisticsOrchestrator.cs" />
     <Compile Include="Orchestrators\TeamOrchestrator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ExistingStatisticsService.cs" />

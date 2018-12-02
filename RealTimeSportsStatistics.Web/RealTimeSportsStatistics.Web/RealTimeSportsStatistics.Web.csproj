@@ -972,10 +972,12 @@
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\StatisticsDisplayModel.cs" />
     <Compile Include="Models\TeamDisplayModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -992,6 +994,7 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Error.cshtml" />
+    <Content Include="Views\Statistics\Statistics.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

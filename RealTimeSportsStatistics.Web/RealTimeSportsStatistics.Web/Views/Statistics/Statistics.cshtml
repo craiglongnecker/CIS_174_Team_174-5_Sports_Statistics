@@ -1,0 +1,174 @@
+﻿@model RealTimeSportsStatistics.Web.Models.StatisticsDisplayModel
+<html>
+<head>
+
+</head>
+<body>
+	<br />
+	<h1>View Game Statistics</h1>
+
+	<div class="table-responsive">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Team 1 ID</th>
+					<th>Team 1 Score</th>
+					<th>Team 1 First Downs</th>
+					<th>Team 1 Total Yards</th>
+					<th>Team 1 Rushing Attempts</th>
+					<th>Team 1 Total Rushing Yards</th>
+					<th>Team 1 Passes Completed</th>
+					<th>Team 1 Passes Attempted</th>
+					<th>Team 1 Passes Intercepted</th>
+					<th>Team 1 Total Passing Yards</th>
+					<th>Team 1 Fumbles</th>
+					<th>Team 1 Fumbles Lost</th>
+					<th>Team 1 Number of Sacks</th>
+					<th>Team 1 Total Sack Yards Lost</th>
+					<th>Team 1 Number of Punts</th>
+					<th>Team 1 Average Yards Per Punt</th>
+					<th>Team 1 Number Of Penalties</th>
+					<th>Team 1 Total Penalty Yards</th>
+					<th>Team 2 ID</th>
+					<th>Team 2 Score</th>
+					<th>Team 2 First Downs</th>
+					<th>Team 2 Total Yards</th>
+					<th>Team 2 Rushing Attempts</th>
+					<th>Team 2 Total Rushing Yards</th>
+					<th>Team 2 Passes Completed</th>
+					<th>Team 2 Passes Attempted</th>
+					<th>Team 2 Passes Intercepted</th>
+					<th>Team 2 Total Passing Yards</th>
+					<th>Team 2 Fumbles</th>
+					<th>Team 2 Fumbles Lost</th>
+					<th>Team 2 Number of Sacks</th>
+					<th>Team 2 Total Sack Yards Lost</th>
+					<th>Team 2 Number of Punts</th>
+					<th>Team 2 Average Yards Per Punt</th>
+					<th>Team 2 Number Of Penalties</th>
+					<th>Team 2 Total Penalty Yards</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var statistics in Model.Statistics)
+				{
+				<tr>
+					<td>
+						@statistics.Team1Id
+					</td>
+					<td>
+						@statistics.Team1TotalScore
+					</td>
+					<td>
+						@statistics.Team1TotalFirstDowns
+					</td>
+					<td>
+						@statistics.Team1TotalYards
+					</td>
+					<td>
+						@statistics.Team1TotalRushes
+					</td>
+					<td>
+						@statistics.Team1TotalRushingYards
+					</td>
+					<td>
+						@statistics.Team1TotalPassesCompleted
+					</td>
+					<td>
+						@statistics.Team1TotalPassesAttempted
+					</td>
+					<td>
+						@statistics.Team1TotalPassesIntercepted
+					</td>
+					<td>
+						@statistics.Team1TotalPassingYards
+					</td>
+					<td>
+						@statistics.Team1TotalFumbles
+					</td>
+					<td>
+						@statistics.Team1TotalFumblesLost
+					</td>
+					<td>
+						@statistics.Team1TotalSacks
+					</td>
+					<td>
+						@statistics.Team1TotalSackYardsLost
+					</td>
+					<td>
+						@statistics.Team1TotalNumberOfPunts
+					</td>
+					<td>
+						@statistics.Team1AverageYardsPerPunt
+					</td>
+					<td>
+						@statistics.Team1TotalNumberOfPenalties
+					</td>
+					<td>
+						@statistics.Team1TotalPenaltyYards
+					</td>
+					<td>
+						@statistics.Team2Id
+					</td>
+					<td>
+						@statistics.Team2TotalScore
+					</td>
+					<td>
+						@statistics.Team2TotalFirstDowns
+					</td>
+					<td>
+						@statistics.Team2TotalYards
+					</td>
+					<td>
+						@statistics.Team2TotalRushes
+					</td>
+					<td>
+						@statistics.Team2TotalRushingYards
+					</td>
+					<td>
+						@statistics.Team2TotalPassesCompleted
+					</td>
+					<td>
+						@statistics.Team2TotalPassesAttempted
+					</td>
+					<td>
+						@statistics.Team2TotalPassesIntercepted
+					</td>
+					<td>
+						@statistics.Team2TotalPassingYards
+					</td>
+					<td>
+						@statistics.Team2TotalFumbles
+					</td>
+					<td>
+						@statistics.Team2TotalFumblesLost
+					</td>
+					<td>
+						@statistics.Team2TotalSacks
+					</td>
+					<td>
+						@statistics.Team2TotalSackYardsLost
+					</td>
+					<td>
+						@statistics.Team2TotalNumberOfPunts
+					</td>
+					<td>
+						@statistics.Team2AverageYardsPerPunt
+					</td>
+					<td>
+						@statistics.Team2TotalNumberOfPenalties
+					</td>
+					<td>
+						@statistics.Team2TotalPenaltyYards
+					</td>
+				</tr>
+				}
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
+
+<link href="~/Content/bootstrap.min.css" />
+<link href="~/Scripts/jquery-3.3.1.min.js" />
+<link href="~/Scripts/bootstrap.min.js" />

@@ -20,6 +20,4 @@ namespace RealTimeSportsStatistics.Web.Controllers
             return View(teamDisplayModel);
         }
     }
-
-
 }
