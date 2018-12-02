@@ -9,6 +9,7 @@ namespace RealTimeSportsStatistics.Web.Controllers
     {
         private TeamOrchestrator _teamOrchestator = new TeamOrchestrator();
         // GET: Team
+        [HandleError]
         public async Task<ActionResult> Statistics()
         {
             var teamDisplayModel = new TeamDisplayModel
@@ -19,6 +20,4 @@ namespace RealTimeSportsStatistics.Web.Controllers
             return View(teamDisplayModel);
         }
     }
-
-
 }

@@ -9,15 +9,15 @@ namespace RealTimeSportsStatistics.Test
     [TestClass]
     public class TeamServiceTests
     {
-        private readonly AutoMoqer _mocker = new AutoMoqer();
+        private readonly AutoMoqer _mocker2 = new AutoMoqer();
 
         [TestInitialize]
         public void Initialize()
         {
-            _mocker.GetMock<IExistingTeamService>()
+            _mocker2.GetMock<IExistingTeamService>()
                     .Setup(x => x.ExistingTeamCity())
                     .Returns("Denver");
-            _mocker.GetMock<IExistingTeamService>()
+            _mocker2.GetMock<IExistingTeamService>()
                     .Setup(x => x.ExistingTeamName())
                     .Returns("Broncos");
         }
@@ -25,52 +25,36 @@ namespace RealTimeSportsStatistics.Test
         [TestMethod]
         public void TeamCity_IfTeamCityIsDenver_ReturnsTrue()
         {
-
             var team = CreateTeam("Denver", "Broncos");
-
-            var teamService = _mocker.Create<TeamService>();
-
+            var teamService = _mocker2.Create<TeamService>();
             var TeamCity = teamService.IsTeamCityDenver(team);
-
             Assert.AreEqual("Denver", TeamCity);
         }
 
         [TestMethod]
         public void TeamCity_IfTeamCityIsNotDenver_ReturnsTrue()
         {
-
             var team = CreateTeam("Denver", "Broncos");
-
-            var teamService = _mocker.Create<TeamService>();
-
+            var teamService = _mocker2.Create<TeamService>();
             var TeamCity = teamService.IsTeamCityDenver(team);
-
             Assert.AreNotEqual("Minnesota", TeamCity);
         }
 
         [TestMethod]
         public void TeamCity_IfTeamNameIsBroncos_ReturnsTrue()
         {
-
             var team = CreateTeam("Denver", "Broncos");
-
-            var teamService = _mocker.Create<TeamService>();
-
+            var teamService = _mocker2.Create<TeamService>();
             var TeamName = teamService.IsTeamNameBroncos(team);
-
             Assert.AreEqual("Broncos", TeamName);
         }
 
         [TestMethod]
         public void TeamCity_IfTeamNameIsNotBroncos_ReturnsTrue()
         {
-
             var team = CreateTeam("Denver", "Broncos");
-
-            var teamService = _mocker.Create<TeamService>();
-
+            var teamService = _mocker2.Create<TeamService>();
             var TeamName = teamService.IsTeamNameBroncos(team);
-
             Assert.AreNotEqual("Vikings", TeamName);
         }
 

@@ -19,6 +19,5 @@ namespace RealTimeSportsStatistics.Shared.Services
         {
             return team.TeamName = _existingTeamService.ExistingTeamName();
         }
-
     }
 }

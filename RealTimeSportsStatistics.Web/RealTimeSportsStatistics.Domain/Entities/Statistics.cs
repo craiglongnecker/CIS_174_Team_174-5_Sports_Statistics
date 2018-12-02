@@ -20,7 +20,6 @@
         public int Team1TotalFumblesLost;
         public int Team1TotalNumberOfPunts;
         public int Team1TotalNumberOfPenalties;
-        public string Team1Result;
 
         public int Team2Id;
         public int Team2TotalScore;
@@ -40,6 +39,5 @@
         public int Team2TotalFumblesLost;
         public int Team2TotalNumberOfPunts;
         public int Team2TotalNumberOfPenalties;
-        public string Team2Result;
     }
 }
