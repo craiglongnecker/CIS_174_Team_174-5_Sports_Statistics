@@ -59,10 +59,12 @@ function validateNumber(id, low, high, errormsgid) {
 	var input = parseInt(element.value);
 	var errormsg = document.getElementById(errormsgid);
 	if (input <= high && input >= low) {
-		errormsg.style.visibility = "hidden";
+		if (errormsg.style.visibility === "visible") {
+			errormsg.style.visibility = "hidden";
+		}
 		return true;
 	}
-	else  {
+	else {
 		errormsg.style.visibility = "visible";
 	}
 	return false;
