@@ -8,6 +8,7 @@ using RealTimeSportsStatistics.Shared.ViewModels;
 
 namespace RealTimeSportsStatistics.Shared.Orchestrators
 {
+
     public class TeamOrchestrator : ITeamOrchestrator
     {
         private TeamContext _teamContext;
@@ -23,8 +24,8 @@ namespace RealTimeSportsStatistics.Shared.Orchestrators
                 TeamID = x.TeamId,
                 TeamCity = x.TeamCity,
                 TeamName = x.TeamName,
-                Wins = x.Wins,
-                Losses = x.Losses
+                ColorOne = x.ColorOne,
+                ColorTwo = x.ColorTwo
             }).ToListAsync();
 
             return teams;

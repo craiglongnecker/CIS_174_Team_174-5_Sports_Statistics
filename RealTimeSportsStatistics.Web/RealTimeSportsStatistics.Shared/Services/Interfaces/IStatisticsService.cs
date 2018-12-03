@@ -25,7 +25,5 @@ namespace RealTimeSportsStatistics.Shared.Services.Interfaces
         int IsTeam1TotalFumbles3(StatisticsViewModel statistics);
         int IsTeam1TotalFumblesLost1(StatisticsViewModel statistics);
         int IsTeam1TotalNumberOfPunts5(StatisticsViewModel statistics);
-        int IsTeam1TotalNumberOfPenalties9(StatisticsViewModel statistics);
-        string IsTeam1ResultWin(StatisticsViewModel statistics);
-    }
+        int IsTeam1TotalNumberOfPenalties9(StatisticsViewModel statistics);    }
 }

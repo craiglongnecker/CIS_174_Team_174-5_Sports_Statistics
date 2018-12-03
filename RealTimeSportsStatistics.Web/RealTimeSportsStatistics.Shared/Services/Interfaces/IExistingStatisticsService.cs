@@ -20,6 +20,5 @@
         int ExistingTeam1TotalFumblesLost();
         int ExistingTeam1TotalNumberOfPunts();
         int ExistingTeam1TotalNumberOfPenalties();
-        string ExistingTeam1Result();
     }
 }

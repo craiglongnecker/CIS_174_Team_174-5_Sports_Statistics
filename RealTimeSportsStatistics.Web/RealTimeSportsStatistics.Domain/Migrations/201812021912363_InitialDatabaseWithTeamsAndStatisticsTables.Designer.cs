@@ -7,13 +7,13 @@ namespace RealTimeSportsStatistics.Domain.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class initialdbcreation : IMigrationMetadata
+    public sealed partial class InitialDatabaseWithTeamsAndStatisticsTables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialdbcreation));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialDatabaseWithTeamsAndStatisticsTables));
         
         string IMigrationMetadata.Id
         {
-            get { return "201811092135326_initial db creation"; }
+            get { return "201812021912363_InitialDatabaseWithTeamsAndStatisticsTables"; }
         }
         
         string IMigrationMetadata.Source

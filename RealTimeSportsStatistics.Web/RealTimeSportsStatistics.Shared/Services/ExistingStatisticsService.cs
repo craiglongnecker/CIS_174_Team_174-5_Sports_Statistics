@@ -13,11 +13,6 @@ namespace RealTimeSportsStatistics.Shared.Services
             return ExistingTeam1AverageYardsPerPunt();
         }
 
-        public string ExistingTeam1Result()
-        {
-            return ExistingTeam1Result();
-        }
-
         public int ExistingTeam1TotalFirstDowns()
         {
             return ExistingTeam1TotalFirstDowns();

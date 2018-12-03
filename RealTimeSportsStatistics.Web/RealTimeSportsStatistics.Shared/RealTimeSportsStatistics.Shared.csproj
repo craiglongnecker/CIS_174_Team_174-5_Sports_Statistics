@@ -51,8 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Orchestrators\Interfaces\IStatistics1Orchestrator.cs" />
     <Compile Include="Orchestrators\Interfaces\IStatisticsOrchestrator.cs" />
     <Compile Include="Orchestrators\Interfaces\ITeamOrchestrator.cs" />
+    <Compile Include="Orchestrators\Statistics1Orchestrator.cs" />
     <Compile Include="Orchestrators\StatisticsOrchestrator.cs" />
     <Compile Include="Orchestrators\TeamOrchestrator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +66,7 @@
     <Compile Include="Services\Interfaces\ITeamService.cs" />
     <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="Services\TeamService.cs" />
+    <Compile Include="ViewModels\Statistics1ViewModel.cs" />
     <Compile Include="ViewModels\StatisticsViewModel.cs" />
     <Compile Include="ViewModels\TeamViewModel.cs" />
   </ItemGroup>

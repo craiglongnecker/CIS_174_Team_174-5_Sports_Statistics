@@ -7,7 +7,5 @@
         public string TeamName { get; set; }
         public string ColorOne { get; set; }
         public string ColorTwo { get; set; }
-        public int Wins { get; set; }
-        public int Losses { get; set; }
     }
 }

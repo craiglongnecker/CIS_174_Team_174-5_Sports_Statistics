@@ -1,6 +1,5 @@
 namespace RealTimeSportsStatistics.Domain.Migrations
 {
-    using RealTimeSportsStatistics.Domain.Entities;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -19,20 +18,6 @@ namespace RealTimeSportsStatistics.Domain.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-
-            /*context.Teams.AddOrUpdate(x => x.TeamId,
-            new Team()
-            {
-                TeamId = 99,
-                TeamCity = "DMACC",
-                TeamName = "Bears",
-                ColorOne = "blue",
-                ColorTwo = "white"
-                Wins = 0,
-                Losses = 0
-
-            }
-            ); */
         }
     }
 }

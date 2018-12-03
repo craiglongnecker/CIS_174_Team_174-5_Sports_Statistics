@@ -16,10 +16,6 @@ namespace RealTimeSportsStatistics.Shared.Services
         {
             return statistics.Team1Id = _existingStatisticsService.ExistingTeam1Id();
         }
-        public string IsTeam1ResultWin(StatisticsViewModel statistics)
-        {
-            return statistics.Team1Result = _existingStatisticsService.ExistingTeam1Result();
-        }
         public int IsTeam1TotalYards450(StatisticsViewModel statistics)
         {
             return statistics.Team1TotalYards = _existingStatisticsService.ExistingTeam1TotalYards();
