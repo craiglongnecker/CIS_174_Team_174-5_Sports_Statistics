@@ -49,10 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Statistics.cs" />
+    <Compile Include="Entities\Statistics1.cs" />
     <Compile Include="Entities\Team.cs" />
-    <Compile Include="Migrations\201811092135326_initial db creation.cs" />
-    <Compile Include="Migrations\201811092135326_initial db creation.Designer.cs">
-      <DependentUpon>201811092135326_initial db creation.cs</DependentUpon>
+    <Compile Include="Migrations\201812021912363_InitialDatabaseWithTeamsAndStatisticsTables.cs" />
+    <Compile Include="Migrations\201812021912363_InitialDatabaseWithTeamsAndStatisticsTables.Designer.cs">
+      <DependentUpon>201812021912363_InitialDatabaseWithTeamsAndStatisticsTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -63,8 +64,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201811092135326_initial db creation.resx">
-      <DependentUpon>201811092135326_initial db creation.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812021912363_InitialDatabaseWithTeamsAndStatisticsTables.resx">
+      <DependentUpon>201812021912363_InitialDatabaseWithTeamsAndStatisticsTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
