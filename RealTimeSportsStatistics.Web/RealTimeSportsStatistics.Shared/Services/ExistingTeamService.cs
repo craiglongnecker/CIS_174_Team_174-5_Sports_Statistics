@@ -13,14 +13,6 @@ namespace RealTimeSportsStatistics.Shared.Services
         {
             return ExistingTeamName();
         }
-        public string ExistingColorOne()
-        {
-            return ExistingColorOne();
-        }
-        public string ExistingColorTwo()
-        {
-            return ExistingColorTwo();
-        }
 
     }
 }
