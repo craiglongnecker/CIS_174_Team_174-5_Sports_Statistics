@@ -5,6 +5,42 @@
 	<link href="~/Content/bootstrap.css" type="text/css" />
 	<script src="~/Scripts/GameScripts/Game.js" type="text/javascript"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script>
+        function background(team, side) {
+            var primaryColor, secondaryColor;
+
+            switch (team) {
+                case 'mn':
+                    primaryColor = '#4F2683';
+                    secondaryColor = '#FFC62F';
+                    break;
+                case 'ne':
+                    primaryColor = '#002244';
+                    secondaryColor = '#C60C30';
+                    break;
+                default:
+                    primaryColor = '#FFFFFF';
+                    secondaryColor = '#000000';
+            }
+
+            if (side == 'away')
+            {
+                document.getElementById("team1Area").style.backgroundColor = primaryColor;
+                document.getElementById("team1Area").style.color = secondaryColor;
+
+                document.getElementById("team1InputArea").style.backgroundColor = primaryColor;
+                document.getElementById("team1InputArea").style.color = secondaryColor;
+            }
+            else
+            {
+                document.getElementById("team2Area").style.backgroundColor = primaryColor;
+                document.getElementById("team2Area").style.color = secondaryColor;
+
+                document.getElementById("team2InputArea").style.backgroundColor = primaryColor;
+                document.getElementById("team2InputArea").style.color = secondaryColor;
+            }
+        }
+    </script>
 	<!--<script src="~/Scripts/GameScripts/Game2.js" type="text/javascript"></script>-->
 	<!--<script src='<%= ResolveUrl("~/Scripts/GameScripts/Game2.js") %>' type="text/javascript"></script>-->
 	<style type="text/css">
@@ -368,19 +404,28 @@
 		}
 
 		
-		function team1Sack() {
+        function team1Sack() {
+            if (validateNumber('team1YardsLostInput', 0, 100, 'errorTeam1')===false); {
 			let yards = document.getElementById('team1YardsLostInput').value;
 			var yards_int = parseFloat(yards, 10);
 
 			let YardsLbl = document.getElementById('team1TotalYardsLbl'); 
 			var current_yards = YardsLbl.innerText;
-			var current_yards_int = parseFloat(current_yards, 10) - yards_int;
-			document.getElementById("team1TotalYardsLbl").innerHTML = current_yards_int.toString();
+            var current_yards_int = parseFloat(current_yards, 10) - yards_int;
+
+            
+            document.getElementById("team1TotalYardsLbl").innerHTML = current_yards_int.toString();
+            
+                            
+			
 
 			let count_lbl = document.getElementById('team1SackLbl');
 			var current_count = count_lbl.innerText;
-			var current_count_int = parseInt(current_count, 10) + 1;
-			document.getElementById("team1SackLbl").innerHTML = current_count_int.toString();
+            var current_count_int = parseInt(current_count, 10) + 1;
+            document.getElementById("team1SackLbl").innerHTML = current_count_int.toString();
+            }
+
+			
 
 			document.getElementById("team1YardsLostInput").value = null;
 		}
@@ -475,66 +520,6 @@
 			document.getElementById("team2Select").value = "default";
 		}
 
-        function teamStyle(team, side) {
-            var primaryColor, secondaryColor, img, index, teamName;
-
-            var teamNames = ["Team Name", "Atlanta Falcons", "Arizona Cardinals", "Buffalo Bills", "Baltimore Ravens", "Carolina Panthers", "Chicago Bears", "Cinncinati Bengals", "Cleveland Browns",
-                "Dallas Cowboys", "Denver Broncos", "Detroit Lions", " Green Bay Packers", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Kansas City Chiefs",
-                "Los Angeles Chargers", "Los Angeles Rams", "Miami Dolphins", "Minnesota Vikings", "New England Patriots", "New Orleans Saints", "New York Giants", "New York Jets",
-                "Oakland Raiders", "Philidelphia Eagles", "Pittsburgh Steelers", "San Francisco 49ers", "Seattle Seahawks", "Tampa Bay Buccaneers", "Tenessee Titans", "Washington Redskins"];
-
-            var teamCodes = ["default", "atl", "az", "blt", "buf", "car", "chi", "cin", "cle", "dal", "den", "det", "gb", "hou", "ind", "jck", "kc", "lac", "lar", "mia", "mn",
-                "ne", "no", "nyg", "nyj", "oak", "phi", "pit", "sf", "sea", "tb", "tn", "wsh"];
-
-            var primaryColors = ["#FFFFFF", "#97233F", "#a71930", "#241773", "#00338D", "#0085CA", "#0B162A", "#fb4f14", "#311D00",
-                "#003594", "#FB4F14", "#0076b6", "#203731", "#03202f", "#002C5F", "#006778", "#E31837",
-                "#002A5E", "#002244", "#008E97", "#4F2683", "#002244", "#D3BC8D", "#0B2265", "#003F2D",
-                "#000000", "#004C54", "#FFB612", "#AA0000", "#002244", "#D50A0A", "#002a5c", "#773141",];
-
-            var secondaryColors = ["#000000", "#000000", "#000000", "#9E7C0C", "#C60C30", "#101820", "#c83803", "#000000", "#ff3c00",
-                "#041E42", "#002244", "#B0B7BC", "#FFB612", "#A71930", "#A2AAAD", "#D7A22A", "#FFB81C",
-                "#FFC20E", "#866D4B", "#F26A24", "#FFC62F", "#C60C30", "#101820", "#a71930", "#FFFFFF",
-                "#A5ACAF", "#A5ACAF", "#101820", "#B3995D", "#69BE28", "#FF7900", "#4495D1", "#FFB612",];
-
-            var imgs = ["..\\Content\\images\\nfl.png", "..\\Content\\images\\atl_falcons.png", "..\\Content\\images\\az_cardinals.png", "..\\Content\\images\\balt_ravens.png", "..\\Content\\images\\buff_bills.png",
-                "..\\Content\\images\\car_panthers.png", "..\\Content\\images\\chi_bears.png", "..\\Content\\images\\cinn_bengals.png", "..\\Content\\images\\cleve_browns.png",
-                "..\\Content\\images\\dall_cowboys.png", "..\\Content\\images\\den_broncos.png", "..\\Content\\images\\det_lions.png", "..\\Content\\images\\gb_packers.png",
-                "..\\Content\\images\\houston_texans.png", "..\\Content\\images\\ind_colts.png", "..\\Content\\images\\jck_jag.png", "..\\Content\\images\\kc_chiefs.png",
-                "..\\Content\\images\\la_chargers.png", "..\\Content\\images\\la_rams.png", "..\\Content\\images\\miami_dolphins.png", "..\\Content\\images\\mn_vikings.png",
-                "..\\Content\\images\\ne_pats.png", "..\\Content\\images\\no_saints.png", "..\\Content\\images\\ny_giants.gif", "..\\Content\\images\\ny_jets.png",
-                "..\\Content\\images\\oak_raiders.png", "..\\Content\\images\\phil_eagles.png", "..\\Content\\images\\pitt_steelers.png",
-                "..\\Content\\images\\sf_49ers.png", "..\\Content\\images\\sea_seahawks.png", "..\\Content\\images\\tb_buccaneers.png", "..\\Content\\images\\tn_titans.png", "..\\Content\\images\\wash_redskins.png"];
-
-            index = teamCodes.indexOf(team);
-
-            primaryColor = primaryColors[index];
-            secondaryColor = secondaryColors[index];
-            img = imgs[index];
-            teamName = teamNames[index];
-
-            if (side == 'away') {
-                document.getElementById("team1Area").style.backgroundColor = primaryColor;
-                document.getElementById("team1Area").style.color = secondaryColor;
-
-                document.getElementById("team1InputArea").style.backgroundColor = primaryColor;
-                document.getElementById("team1InputArea").style.color = secondaryColor;
-
-                document.getElementById("team1Logo").src = img;
-
-                document.getElementById("team1Name").innerHTML = teamName;
-            }
-            else {
-                document.getElementById("team2Area").style.backgroundColor = primaryColor;
-                document.getElementById("team2Area").style.color = secondaryColor;
-
-                document.getElementById("team2InputArea").style.backgroundColor = primaryColor;
-                document.getElementById("team2InputArea").style.color = secondaryColor;
-
-                document.getElementById("team2Logo").src = img;
-
-                document.getElementById("team2Name").innerHTML = teamName;
-            }
-        }
 
 	</script>
 	<div id="container">
@@ -546,41 +531,40 @@
 					<form action="./" method="GET">
 
 
-                        <select name="team1Select" onchange="teamStyle(this.value, 'away')">
-                            <option value="default">Pick A Team</option>
-                            <option value="atl">Atlanta Falcons</option>
-                            <option value="az">Arizona Cardinals</option>
-                            <option value="blt">Baltimore Ravens</option>
-                            <option value="buf">Buffalo Bills</option>
-                            <option value="car">Carolina Panthers</option>
-                            <option value="chi">Chicago Bears</option>
-                            <option value="cin">Cinncinati Bengals</option>
-                            <option value="cle">Cleveland Browns</option>
-                            <option value="dal">Dallas Cowboys</option>
-                            <option value="den">Denver Broncos</option>
-                            <option value="det">Detroit Lions</option>
-                            <option value="gb">Green Bay Packers</option>
-                            <option value="hou">Houston Texans</option>
-                            <option value="ind">Indianapolis Colts</option>
-                            <option value="jck">Jacksonville Jaguars</option>
-                            <option value="kc">Kansas City Chiefs</option>
-                            <option value="lac">Los Angeles Chargers</option>
-                            <option value="lar">Los Angeles Rams</option>
-                            <option value="mia">Miami Dolphins</option>
-                            <option value="mn">Minnesota Vikings</option>
-                            <option value="ne">New England Patriots</option>
-                            <option value="no">New Orleans Saints</option>
-                            <option value="nyg">New York Giants</option>
-                            <option value="nyj">New York Jets</option>
-                            <option value="oak">Oakland Raiders</option>
-                            <option value="phi">Philadelphia Eagles</option>
-                            <option value="pit">Pittsburgh Steelers</option>
-                            <option value="sf">San Francisco 49ers</option>
-                            <option value="sea">Seattle Seahawks</option>
-                            <option value="tb">Tampa Bay Buccaneers</option>
-                            <option value="tn">Tenessee Titans</option>
-                            <option value="wsh">Washington Redskins</option>
-                        </select>
+						<select name="team1Select" onchange="background(this.value, 'away')">
+              <option value="default">Pick A Team</option>
+							<option value="atl">Atlanta Falcons</option>
+							<option value="az">Arizona Cardinals</option>
+							<option value="blt">Baltimore Ravens</option>
+							<option value="car">Carolina Panthers</option>
+							<option value="chi">Chicago Bears</option>
+							<option value="cin">Cinncinati Bengals</option>
+							<option value="cle">Cleveland Browns</option>
+							<option value="dal">Dallas Cowboys</option>
+							<option value="den">Denver Broncos</option>
+							<option value="det">Detroit Lions</option>
+							<option value="gb">Green Bay Packers</option>
+							<option value="hou">Houston Texans</option>
+							<option value="ind">Indianapolis Colts</option>
+							<option value="jck">Jacksonville Jaguars</option>
+							<option value="kc">Kansas City Chiefs</option>
+							<option value="lac">Los Angeles Chargers</option>
+							<option value="lar">Los Angeles Rams</option>
+							<option value="mai">Miami Dolphins</option>
+							<option value="mn">Minnesota Vikings</option>
+							<option value="ne">New England Patriots</option>
+							<option value="no">New Orleans Saints</option>
+							<option value="nyg">New York Giants</option>
+							<option value="nyj">New York Jets</option>
+							<option value="oak">Oakland Raiders</option>
+							<option value="phi">Philadelphia Eagles</option>
+							<option value="pit">Pittsburgh Steelers</option>
+							<option value="sea">Seattle Seahawks</option>
+							<option value="sf">San Francisco 49ers</option>
+							<option value="tb">Tampa Bay Buccaneers</option>
+							<option value="tn">Tenessee Titans</option>
+							<option value="wsh">Washington Redskins</option>
+						</select>
 					</form>
 				</div>
 				<div class="col" style="text-align:center;">
@@ -590,41 +574,40 @@
 				<div class="col" style="text-align: right;">
 					<form action="./" method="GET">
 
-                        <select name="team2Select" onchange="teamStyle(this.value, 'home')">
-                            <option value="default">Pick A Team</option>
-                            <option value="atl">Atlanta Falcons</option>
-                            <option value="az">Arizona Cardinals</option>
-                            <option value="blt">Baltimore Ravens</option>
-                            <option value="buf">Buffalo Bills</option>
-                            <option value="car">Carolina Panthers</option>
-                            <option value="chi">Chicago Bears</option>
-                            <option value="cin">Cinncinati Bengals</option>
-                            <option value="cle">Cleveland Browns</option>
-                            <option value="dal">Dallas Cowboys</option>
-                            <option value="den">Denver Broncos</option>
-                            <option value="det">Detroit Lions</option>
-                            <option value="gb">Green Bay Packers</option>
-                            <option value="hou">Houston Texans</option>
-                            <option value="ind">Indianapolis Colts</option>
-                            <option value="jck">Jacksonville Jaguars</option>
-                            <option value="kc">Kansas City Chiefs</option>
-                            <option value="lac">Los Angeles Chargers</option>
-                            <option value="lar">Los Angeles Rams</option>
-                            <option value="mia">Miami Dolphins</option>
-                            <option value="mn">Minnesota Vikings</option>
-                            <option value="ne">New England Patriots</option>
-                            <option value="no">New Orleans Saints</option>
-                            <option value="nyg">New York Giants</option>
-                            <option value="nyj">New York Jets</option>
-                            <option value="oak">Oakland Raiders</option>
-                            <option value="phi">Philadelphia Eagles</option>
-                            <option value="pit">Pittsburgh Steelers</option>
-                            <option value="sf">San Francisco 49ers</option>
-                            <option value="sea">Seattle Seahawks</option>
-                            <option value="tb">Tampa Bay Buccaneers</option>
-                            <option value="tn">Tenessee Titans</option>
-                            <option value="wsh">Washington Redskins</option>
-                        </select>
+						<select name="team2Select" onchange="background(this.value, 'home')">
+							<option value="default">Pick A Team</option>
+							<option value="atl">Atlanta Falcons</option>
+							<option value="az">Arizona Cardinals</option>
+							<option value="blt">Baltimore Ravens</option>
+							<option value="car">Carolina Panthers</option>
+							<option value="chi">Chicago Bears</option>
+							<option value="cin">Cinncinati Bengals</option>
+							<option value="cle">Cleveland Browns</option>
+							<option value="dal">Dallas Cowboys</option>
+							<option value="den">Denver Broncos</option>
+							<option value="det">Detroit Lions</option>
+							<option value="gb">Green Bay Packers</option>
+							<option value="hou">Houston Texans</option>
+							<option value="ind">Indianapolis Colts</option>
+							<option value="jck">Jacksonville Jaguars</option>
+							<option value="kc">Kansas City Chiefs</option>
+							<option value="lac">Los Angeles Chargers</option>
+							<option value="lar">Los Angeles Rams</option>
+							<option value="mai">Miami Dolphins</option>
+							<option value="mn">Minnesota Vikings</option>
+							<option value="ne">New England Patriots</option>
+							<option value="no">New Orleans Saints</option>
+							<option value="nyg">New York Giants</option>
+							<option value="nyj">New York Jets</option>
+							<option value="oak">Oakland Raiders</option>
+							<option value="phi">Philadelphia Eagles</option>
+							<option value="pit">Pittsburgh Steelers</option>
+							<option value="sea">Seattle Seahawks</option>
+							<option value="sf">San Francisco 49ers</option>
+							<option value="tb">Tampa Bay Buccaneers</option>
+							<option value="tn">Tenessee Titans</option>
+							<option value="wsh">Washington Redskins</option>
+						</select>
 					</form>
 				</div>
 			</div> <!---close team select/reset row------>
@@ -632,7 +615,7 @@
 			<div class="row">
 				<!------row for logos, team name, and quarter score card-->
 				<div class="col-sm-3" style="align-content:center; text-align:center;">
-					<img id="team1Logo" team1Logo" src="~/Content/images/nfl.png" style="width:200px; height: 200px;" /> <br />
+					<img id=" " team1Logo" src="~/Content/images/nfl.png" style="width:200px; height: 200px;" /> <br />
 					<label id="team1Name">Team 1 Name</label>
 				</div>
 				<div class="col-sm-6" style="align-content:center; margin: auto 0;">
@@ -674,7 +657,7 @@
 				</div>
 				<div class="col-sm-3" style="align-content:center; text-align:center;">
 					<img id="team2Logo" src="~/Content/images/nfl.png" style="width:200px; height: 200px;" /> <br />
-					<label id="team2Name">Team 2 Name</label>
+					<label id="teamName">Team 2 Name</label>
 				</div>
 			</div> <!------close row for logos, team names, and score card-->
 
@@ -867,7 +850,7 @@
 						</tr>
 						<tr>
 							<td>
-								<button id="team1sack" onclick="team1Sack(), validateNumber('team1YardsLostInput', 0, 100, 'errorTeam1')">Sack</button> <!--team 1 sack counter++-->
+								<button id="team1sack" onclick="team1Sack() ">Sack</button> <!--team 1 sack counter++-->
 								<br />Yards Lost: <input size="2" type="text" id="team1YardsLostInput">
 							</td> <!--add input value to current yards lost yards total-->
 							<td>

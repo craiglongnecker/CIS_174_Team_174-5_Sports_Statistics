@@ -56,16 +56,19 @@ function team2FirstDown() { //increments team 2 first down count by 1
 
 function validateNumber(id, low, high, errormsgid) {
 	var element = document.getElementById(id);
-	var input = parseInt(element.value);
+    var input = parseInt(element.value);
+    console.log(input);
 	var errormsg = document.getElementById(errormsgid);
 	if (input <= high && input >= low) {
 		if (errormsg.style.visibility === "visible") {
 			errormsg.style.visibility = "hidden";
-		}
+        }
+        console.log(true);
 		return true;
 	}
 	else {
 		errormsg.style.visibility = "visible";
-	}
+    }
+    console.log(false);
 	return false;
 }

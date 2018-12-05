@@ -66,6 +66,8 @@
     <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -114,13 +116,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\LoginDatabase.mdf" />
+    <Content Include="App_Data\LoginDatabase_log.ldf">
+      <DependentUpon>LoginDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Models\LoginModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LoginModel.edmx</DependentUpon>
+      <LastGenOutput>LoginModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\LoginModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LoginModel.edmx</DependentUpon>
+      <LastGenOutput>LoginModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\LoginModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LoginModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\LoginModel.edmx.diagram">
+      <DependentUpon>LoginModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2-vsdoc.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -140,12 +163,33 @@
     <Compile Include="Controllers\Statistics1Controller.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Crypto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Extended\User.cs" />
+    <Compile Include="Models\LoginModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\LoginModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Statistics1Model.cs" />
     <Compile Include="Models\StatisticsModel.cs" />
     <Compile Include="Models\TeamModel.cs" />
+    <Compile Include="Models\User.cs">
+      <DependentUpon>LoginModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +202,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\web.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\User\Registration.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -166,7 +211,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RealTimeSportsStatistics.Domain\RealTimeSportsStatistics.Domain.csproj">
@@ -178,6 +223,7 @@
       <Name>RealTimeSportsStatistics.Shared</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
