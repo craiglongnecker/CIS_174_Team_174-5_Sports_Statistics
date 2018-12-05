@@ -11,13 +11,25 @@ namespace RealTimeSportsStatistics.Shared.Services
         {
             _existingTeamService = existingTeamService;
         }
+
         public string IsTeamCityDenver(TeamViewModel team)
         {
             return team.TeamCity = _existingTeamService.ExistingTeamCity();
         }
+
         public string IsTeamNameBroncos(TeamViewModel team)
         {
             return team.TeamName = _existingTeamService.ExistingTeamName();
+        }
+
+        public string IsBroncosPrimaryColorBlue(TeamViewModel team)
+        {
+            return team.TeamName = _existingTeamService.ExistingColorOne();
+        }
+
+        public string IsBroncosSecondaryColorOrange(TeamViewModel team)
+        {
+            return team.TeamName = _existingTeamService.ExistingColorTwo();
         }
     }
 }
