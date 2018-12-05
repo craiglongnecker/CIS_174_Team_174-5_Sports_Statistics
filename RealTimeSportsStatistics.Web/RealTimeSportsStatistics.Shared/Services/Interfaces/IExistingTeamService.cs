@@ -4,5 +4,7 @@
     {
         string ExistingTeamCity();
         string ExistingTeamName();
+        string ExistingColorOne();
+        string ExistingColorTwo();
     }
 }
