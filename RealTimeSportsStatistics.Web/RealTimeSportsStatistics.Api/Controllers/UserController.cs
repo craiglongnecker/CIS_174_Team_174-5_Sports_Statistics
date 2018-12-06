@@ -102,7 +102,7 @@ namespace RealTimeSportsStatistics.Api.Controllers
             var fromEmail = new MailAddress("dotnetawesome@supermail.com", "Dotnet Awesome");
             var toEmail = new MailAddress(emailID);
             var fromEmailPassword = "**********"; //REplace with actual password
-            string subject = "Your account has been created!"
+                string subject = "Your account has been created!";
 
                 string body = "<br><br/>We are excited that your account is complete!" + "Please Click the link below" +
 
@@ -110,7 +110,7 @@ namespace RealTimeSportsStatistics.Api.Controllers
 
             var smtp = new SmtpClient
             {
-Host = "smtp.gmail.com"
+Host = "smtp.gmail.com",
 Port = 587,
 EnableSsl = true,
 DeliveryMethod = SmtpDeliveryMethod.Network,
@@ -119,12 +119,12 @@ Credentials = new NetworkCredential(fromEmail.Address, fromEmailPassword)
             };
             using (var message = new MailMessage(fromEmail, toEmail))
             {
-                subject = subject,
-                body = body,
-                IsBodyHtml = true,
-
-            })
-            smtp.Send(Message);
+                message.Subject = subject;
+                message.Body = body;
+                IsBodyHtml = true;
+                smtp.Send(message);
+            }
+            
             }
         
         }

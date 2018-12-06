@@ -20,7 +20,7 @@ namespace RealTimeSportsStatistics.Api.Models
         public string EmailId { get; set; }
         public string Password { get; set; }
         public string DateOfBirth { get; set; }
-        public string IsEMailVerified { get; set; }
+        public Boolean IsEMailVerified { get; set; }
         public System.Guid ActivationCode { get; set; }
     }
 }
